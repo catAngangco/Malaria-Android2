@@ -26,6 +26,8 @@
     <string name="add_new_photo">Add New Photo</string>
     <string name="title_activity_fullscreen_image">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string><string name="birthday">Birthday</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="birthday">Birthday</string>
+    <string name="title_activity_fullscreen_photo">MainActivity</string>
 
 </resources>

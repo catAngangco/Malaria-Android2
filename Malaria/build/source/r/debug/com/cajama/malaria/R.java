@@ -163,30 +163,33 @@ public final class R {
         public static final int social_share=0x7f02008e;
     }
     public static final class id {
-        public static final int action_next=0x7f09000f;
-        public static final int action_photo=0x7f09000e;
-        public static final int action_prev=0x7f09000d;
-        public static final int action_settings=0x7f09000c;
-        public static final int button=0x7f090000;
-        public static final int button2=0x7f090001;
-        public static final int button3=0x7f090002;
-        public static final int clientEditCreate_BirthDateDayPicker=0x7f090008;
-        public static final int first_flip=0x7f090004;
-        public static final int gender_spinner=0x7f090009;
-        public static final int given_name_textfield=0x7f090005;
-        public static final int last_name_textfield=0x7f090007;
-        public static final int middle_name_textfield=0x7f090006;
-        public static final int new_report_photos_layout=0x7f09000b;
-        public static final int second_flip=0x7f09000a;
-        public static final int viewFlipper=0x7f090003;
+        public static final int action_next=0x7f090010;
+        public static final int action_photo=0x7f09000f;
+        public static final int action_prev=0x7f09000e;
+        public static final int action_settings=0x7f09000d;
+        public static final int button=0x7f090001;
+        public static final int button2=0x7f090002;
+        public static final int button3=0x7f090003;
+        public static final int clientEditCreate_BirthDateDayPicker=0x7f090009;
+        public static final int first_flip=0x7f090005;
+        public static final int fullscreen_imageView=0x7f090000;
+        public static final int gender_spinner=0x7f09000a;
+        public static final int given_name_textfield=0x7f090006;
+        public static final int last_name_textfield=0x7f090008;
+        public static final int middle_name_textfield=0x7f090007;
+        public static final int new_report_photos_layout=0x7f09000c;
+        public static final int second_flip=0x7f09000b;
+        public static final int viewFlipper=0x7f090004;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_new_report=0x7f030001;
+        public static final int activity_fullscreen_photo=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_new_report=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int new_report=0x7f080001;
+        public static final int fullscreen_photo=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int new_report=0x7f080002;
     }
     public static final class string {
         public static final int action_settings=0x7f060000;
@@ -208,8 +211,9 @@ public final class R {
         public static final int submit_new_report=0x7f060010;
         public static final int take_photo=0x7f060011;
         public static final int title_activity_fullscreen_image=0x7f060012;
-        public static final int title_activity_new_report=0x7f060013;
-        public static final int title_activity_new_report_patient_details=0x7f060014;
+        public static final int title_activity_fullscreen_photo=0x7f060013;
+        public static final int title_activity_new_report=0x7f060014;
+        public static final int title_activity_new_report_patient_details=0x7f060015;
     }
     public static final class style {
         /** 

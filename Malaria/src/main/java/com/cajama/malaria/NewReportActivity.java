@@ -93,8 +93,9 @@ public class NewReportActivity extends Activity {
 
         new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                images.remove(position);
-                images.notifyDataSetChanged();
+                Intent i = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
+                i.putExtra("image", (Bitmap) images.getItem(position));
+                startActivity(i);
             }
         });
     }
