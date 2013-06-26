@@ -38,6 +38,10 @@ public class NewReportActivity extends Activity {
             images.add(b);
         }
 
+        public void remove(int pos) {
+            images.remove(pos);
+        }
+
         @Override
         public int getCount() {
             return images.size();
@@ -86,6 +90,13 @@ public class NewReportActivity extends Activity {
         images = new ImageAdapter(this);
         new_report_photos_layout = (GridView) findViewById(R.id.new_report_photos_layout);
         new_report_photos_layout.setAdapter(images);
+
+        new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                images.remove(position);
+                images.notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
