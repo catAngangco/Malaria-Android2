@@ -163,10 +163,11 @@ public final class R {
         public static final int social_share=0x7f02008e;
     }
     public static final class id {
-        public static final int action_next=0x7f090010;
-        public static final int action_photo=0x7f09000f;
-        public static final int action_prev=0x7f09000e;
-        public static final int action_settings=0x7f09000d;
+        public static final int action_delete_photo=0x7f09000d;
+        public static final int action_next=0x7f090011;
+        public static final int action_photo=0x7f090010;
+        public static final int action_prev=0x7f09000f;
+        public static final int action_settings=0x7f09000e;
         public static final int button=0x7f090001;
         public static final int button2=0x7f090002;
         public static final int button3=0x7f090003;
@@ -199,8 +200,8 @@ public final class R {
         public static final int back=0x7f060004;
         public static final int birthday=0x7f060005;
         public static final int cancel=0x7f060006;
-        public static final int dummy_button=0x7f060007;
-        public static final int dummy_content=0x7f060008;
+        public static final int delete=0x7f060007;
+        public static final int delete_photo=0x7f060008;
         public static final int given_name=0x7f060009;
         public static final int hello_world=0x7f06000a;
         public static final int last_name=0x7f06000b;
@@ -210,10 +211,9 @@ public final class R {
         public static final int sent_entries=0x7f06000f;
         public static final int submit_new_report=0x7f060010;
         public static final int take_photo=0x7f060011;
-        public static final int title_activity_fullscreen_image=0x7f060012;
-        public static final int title_activity_fullscreen_photo=0x7f060013;
-        public static final int title_activity_new_report=0x7f060014;
-        public static final int title_activity_new_report_patient_details=0x7f060015;
+        public static final int title_activity_fullscreen_photo=0x7f060012;
+        public static final int title_activity_new_report=0x7f060013;
+        public static final int title_activity_new_report_patient_details=0x7f060014;
     }
     public static final class style {
         /** 

@@ -22,6 +22,7 @@ public class FullscreenPhotoActivity extends Activity {
 
         ImageView image = (ImageView) findViewById(R.id.fullscreen_imageView);
         image.setImageBitmap(bmp);
+
     }
 
 

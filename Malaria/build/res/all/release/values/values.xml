@@ -16,8 +16,8 @@
     <string name="back">Back</string>
     <string name="birthday">Birthday</string>
     <string name="cancel">Cancel</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="delete">Delete</string>
+    <string name="delete_photo">Delete Photo</string>
     <string name="given_name">Given Name</string>
     <string name="hello_world">Hello world!</string>
     <string name="last_name">Last Name</string>
@@ -27,8 +27,7 @@
     <string name="sent_entries">Sent Entries</string>
     <string name="submit_new_report">Submit New Report</string>
     <string name="take_photo">Take Photo</string>
-    <string name="title_activity_fullscreen_image">FullscreenActivity</string>
-    <string name="title_activity_fullscreen_photo">MainActivity</string>
+    <string name="title_activity_fullscreen_photo">Full Screen Photo</string>
     <string name="title_activity_new_report">New Report</string>
     <string name="title_activity_new_report_patient_details">New Report</string>
 
