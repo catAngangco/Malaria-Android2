@@ -32,6 +32,7 @@ public class NewReportActivity extends Activity {
     GridView new_report_photos_layout;
     ImageAdapter images;
     private static final int CAMERA_REQUEST = 1888;
+    private static final int PHOTO_REQUEST = 4214;
     private Uri fileUri;
     private String imageFilePath;
 
@@ -109,9 +110,10 @@ public class NewReportActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
 
+                intent.putExtra("pos", position);
                 intent.putExtra("path", images.getItem(position).path);
 
-                startActivity(intent);
+                startActivityForResult(intent, PHOTO_REQUEST);
             }
         });
     }
@@ -190,7 +192,17 @@ public class NewReportActivity extends Activity {
             bmpp.path = imageFilePath;
 
             images.AddImage(bmpp);
-            images.notifyDataSetInvalidated();
+            images.notifyDataSetChanged();
+        } else if (requestCode == PHOTO_REQUEST && resultCode == RESULT_OK) {
+            int pos = data.getIntExtra("pos", -1);
+            
+            File file = new File(images.getItem(pos).path);
+            file.delete();
+
+            images.remove(pos);
+            images.notifyDataSetChanged();
+
+
         }
     }
 }
