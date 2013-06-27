@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +22,7 @@ import android.widget.ViewFlipper;
 
 import com.cajama.android.customviews.SquareImageView;
 
+import java.io.File;
 import java.util.Vector;
 
 public class NewReportActivity extends Activity {
@@ -25,6 +30,9 @@ public class NewReportActivity extends Activity {
     GridView new_report_photos_layout;
     ImageAdapter images;
     private static final int CAMERA_REQUEST = 1888;
+    private Uri fileUri;
+    private String imageFilePath;
+
 
     private class ImageAdapter extends BaseAdapter {
         private Context mContext;
@@ -93,9 +101,7 @@ public class NewReportActivity extends Activity {
 
         new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
-                i.putExtra("image", (Bitmap) images.getItem(position));
-                startActivity(i);
+
             }
         });
     }
@@ -138,8 +144,15 @@ public class NewReportActivity extends Activity {
                 VF.showNext();
                 return true;
             case R.id.action_photo:
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/picture.jpg";
+
+                File imageFile = new File(imageFilePath);
+                fileUri = Uri.fromFile(imageFile);
+                cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -158,10 +171,13 @@ public class NewReportActivity extends Activity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            images.AddImage(photo);
-            images.notifyDataSetChanged();
+            BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
+            bmpFactoryOptions.inJustDecodeBounds = false;
 
+            Bitmap bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
+
+            images.AddImage(bmp);
+            images.notifyDataSetInvalidated();
         }
     }
 }

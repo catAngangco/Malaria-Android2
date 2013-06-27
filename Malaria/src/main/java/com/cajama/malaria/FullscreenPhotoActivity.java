@@ -2,11 +2,8 @@ package com.cajama.malaria;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.widget.ImageView;
 
 public class FullscreenPhotoActivity extends Activity {
 
@@ -14,16 +11,8 @@ public class FullscreenPhotoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen_photo);
-        // get intent data
-        Intent i = getIntent();
+        Intent intent = getIntent();
 
-        // Selected image id
-        int position = i.getExtras().getInt("id");
-
-        LayoutInflater inflater = getLayoutInflater();
-        Bitmap bitmap = (Bitmap) i.getParcelableExtra("image");
-        ImageView image = (ImageView) findViewById(R.id.fullscreen_imageView);
-        image.setImageBitmap(bitmap);
     }
 
 

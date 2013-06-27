@@ -66,23 +66,21 @@
                 </string>
                 <string name="queued_entries" >Queued Entries
                 </string>
-                <string name="title_activity_fullscreen_photo" >MainActivity
-                </string>
                 <string name="title_activity_new_report" >New Report
                 </string>
-                <string name="app_name" >Malaria
+                <string name="title_activity_fullscreen_photo" >MainActivity
+                </string>
+                <string name="last_name" >Last Name
                 </string>
                 <string name="birthday" >Birthday
                 </string>
-                <string name="last_name" >Last Name
+                <string name="app_name" >Malaria
                 </string>
                 <string name="dummy_content" >DUMMY\nCONTENT
                 </string>
                 <string name="next" >Next
                 </string>
                 <string name="hello_world" >Hello world!
-                </string>
-                <string name="title_activity_new_report_patient_details" >New Report
                 </string>
 
                 <string-array name="gender_array" >
@@ -94,9 +92,11 @@ Female
                     </item>
                 </string-array>
 
-                <string name="add_new_photo" >Add New Photo
+                <string name="title_activity_new_report_patient_details" >New Report
                 </string>
                 <string name="given_name" >Given Name
+                </string>
+                <string name="add_new_photo" >Add New Photo
                 </string>
             </file>
             <file
