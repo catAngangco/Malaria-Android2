@@ -23,7 +23,9 @@ import android.widget.ViewFlipper;
 import com.cajama.android.customviews.SquareImageView;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Vector;
+import java.util.Date;
 
 public class NewReportActivity extends Activity {
     ViewFlipper VF;
@@ -33,16 +35,20 @@ public class NewReportActivity extends Activity {
     private Uri fileUri;
     private String imageFilePath;
 
+    private class myBitmap {
+        String path;
+        Bitmap image;
+    }
 
     private class ImageAdapter extends BaseAdapter {
         private Context mContext;
-        private Vector<Bitmap> images = new Vector<Bitmap>();
+        private Vector<myBitmap> images = new Vector<myBitmap>();
 
         public ImageAdapter(Context c) {
             mContext = c;
         }
 
-        public void AddImage(Bitmap b) {
+        public void AddImage(myBitmap b) {
             images.add(b);
         }
 
@@ -56,7 +62,7 @@ public class NewReportActivity extends Activity {
         }
 
         @Override
-        public Object getItem(int arg0) {
+        public myBitmap getItem(int arg0) {
             return images.get(arg0);
         }
 
@@ -75,7 +81,7 @@ public class NewReportActivity extends Activity {
                 img = (SquareImageView)convertView;
             }
 
-            img.setImageBitmap(images.get(position));
+            img.setImageBitmap(images.get(position).image);
             img.setScaleType(SquareImageView.ScaleType.CENTER_CROP);
             return img;
         }
@@ -101,7 +107,11 @@ public class NewReportActivity extends Activity {
 
         new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
 
+                intent.putExtra("path", images.getItem(position).path);
+
+                startActivity(intent);
             }
         });
     }
@@ -145,8 +155,8 @@ public class NewReportActivity extends Activity {
                 return true;
             case R.id.action_photo:
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/picture.jpg";
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_picture.jpg";
 
                 File imageFile = new File(imageFilePath);
                 fileUri = Uri.fromFile(imageFile);
@@ -172,11 +182,14 @@ public class NewReportActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
-            bmpFactoryOptions.inJustDecodeBounds = false;
 
             Bitmap bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
 
-            images.AddImage(bmp);
+            myBitmap bmpp = new myBitmap();
+            bmpp.image = bmp;
+            bmpp.path = imageFilePath;
+
+            images.AddImage(bmpp);
             images.notifyDataSetInvalidated();
         }
     }
