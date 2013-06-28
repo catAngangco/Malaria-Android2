@@ -92,6 +92,8 @@
                 </string>
                 <string name="delete" >Delete
                 </string>
+                <string name="photo_delete_warning" >This photo will be deleted. This action is irreversible.
+                </string>
                 <string name="title_activity_new_report_patient_details" >New Report
                 </string>
                 <string name="all_current_progress_will_be_lost" >All current progress will be lost.

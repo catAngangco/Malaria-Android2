@@ -25,6 +25,7 @@
     <string name="new_report_cancel_warning">This report will be discarded. All progress including photos will be lost.</string>
     <string name="next">Next</string>
     <string name="ok">Ok</string>
+    <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
     <string name="queued_entries">Queued Entries</string>
     <string name="sent_entries">Sent Entries</string>
     <string name="submit_new_report">Submit New Report</string>

@@ -4,5 +4,5 @@
           android:visible="true"
           android:orderInCategory="100"
           android:icon="@drawable/navigation_cancel"
-          android:showAsAction="always|withText" />
+          android:showAsAction="never" />
 </menu>

@@ -209,14 +209,15 @@ public final class R {
         public static final int new_report_cancel_warning=0x7f06000d;
         public static final int next=0x7f06000e;
         public static final int ok=0x7f06000f;
-        public static final int queued_entries=0x7f060010;
-        public static final int sent_entries=0x7f060011;
-        public static final int submit_new_report=0x7f060012;
-        public static final int take_photo=0x7f060013;
-        public static final int title_activity_fullscreen_photo=0x7f060014;
-        public static final int title_activity_new_report=0x7f060015;
-        public static final int title_activity_new_report_patient_details=0x7f060016;
-        public static final int warning=0x7f060017;
+        public static final int photo_delete_warning=0x7f060010;
+        public static final int queued_entries=0x7f060011;
+        public static final int sent_entries=0x7f060012;
+        public static final int submit_new_report=0x7f060013;
+        public static final int take_photo=0x7f060014;
+        public static final int title_activity_fullscreen_photo=0x7f060015;
+        public static final int title_activity_new_report=0x7f060016;
+        public static final int title_activity_new_report_patient_details=0x7f060017;
+        public static final int warning=0x7f060018;
     }
     public static final class style {
         /** 

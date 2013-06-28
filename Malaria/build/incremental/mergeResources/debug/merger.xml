@@ -92,6 +92,8 @@
                 </string>
                 <string name="delete" >Delete
                 </string>
+                <string name="photo_delete_warning" >This photo will be deleted. This action is irreversible.
+                </string>
 
                 <string-array name="gender_array" >
                     <item>

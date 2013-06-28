@@ -1,6 +1,8 @@
 package com.cajama.malaria;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -42,10 +44,29 @@ public class FullscreenPhotoActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_delete_photo:
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("pos", pos);
-                setResult(RESULT_OK, resultIntent);
-                finish();
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder
+                        .setTitle(R.string.warning)
+                        .setMessage(R.string.photo_delete_warning)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                Intent resultIntent = new Intent();
+                                resultIntent.putExtra("pos", pos);
+                                setResult(RESULT_OK, resultIntent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                alertDialog.show();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
