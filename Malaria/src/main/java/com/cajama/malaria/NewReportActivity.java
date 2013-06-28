@@ -1,7 +1,9 @@
 package com.cajama.malaria;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -146,14 +148,39 @@ public class NewReportActivity extends Activity {
             case R.id.action_prev:
                 invalidateOptionsMenu();
                 if (VF.getDisplayedChild() == 0) {
-                    finish();
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                    alertDialogBuilder
+                            .setTitle(R.string.warning)
+                            .setMessage(R.string.new_report_cancel_warning)
+                            .setCancelable(false)
+                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    for (int c=0; c<images.getCount(); c++) {
+                                        File file = new File(images.getItem(c).path);
+                                        file.delete();
+                                    }
+
+                                    finish();
+                                }
+                            })
+                            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    alertDialog.show();
                 } else {
                     VF.showPrevious();
                 }
                 return true;
             case R.id.action_next:
                 invalidateOptionsMenu();
-                VF.showNext();
+                if(VF.getDisplayedChild() != VF.getChildCount()-1) {
+                    VF.showNext();
+                }
                 return true;
             case R.id.action_photo:
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -203,6 +230,39 @@ public class NewReportActivity extends Activity {
             images.notifyDataSetChanged();
 
 
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        invalidateOptionsMenu();
+        if (VF.getDisplayedChild() == 0) {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder
+                    .setTitle(R.string.warning)
+                    .setMessage(R.string.new_report_cancel_warning)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            for (int c=0; c<images.getCount(); c++) {
+                                File file = new File(images.getItem(c).path);
+                                file.delete();
+                            }
+
+                            finish();
+                        }
+                    })
+                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            alertDialog.show();
+        } else {
+            VF.showPrevious();
         }
     }
 }
