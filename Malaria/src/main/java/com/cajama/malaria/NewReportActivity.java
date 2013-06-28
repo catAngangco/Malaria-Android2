@@ -222,14 +222,14 @@ public class NewReportActivity extends Activity {
             images.notifyDataSetChanged();
         } else if (requestCode == PHOTO_REQUEST && resultCode == RESULT_OK) {
             int pos = data.getIntExtra("pos", -1);
-            
-            File file = new File(images.getItem(pos).path);
-            file.delete();
 
-            images.remove(pos);
-            images.notifyDataSetChanged();
+            if (pos != -1 ){
+                File file = new File(images.getItem(pos).path);
+                file.delete();
 
-
+                images.remove(pos);
+                images.notifyDataSetChanged();
+            }
         }
     }
 

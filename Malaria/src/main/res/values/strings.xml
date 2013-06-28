@@ -25,12 +25,12 @@
     <string name="cancel">Cancel</string>
     <string name="add_new_photo">Add New Photo</string>
     <string name="birthday">Birthday</string>
-    <string name="title_activity_fullscreen_photo">Full Screen Photo</string>
+    <string name="title_activity_fullscreen_photo"></string>
     <string name="delete">Delete</string>
     <string name="delete_photo">Delete Photo</string>
     <string name="warning">Warning</string>
     <string name="new_report_cancel_warning">This report will be discarded. All progress including photos will be lost.</string>
     <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
 
 </resources>

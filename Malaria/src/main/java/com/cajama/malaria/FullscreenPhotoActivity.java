@@ -17,6 +17,7 @@ public class FullscreenPhotoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_fullscreen_photo);
         Intent intent = getIntent();
 
@@ -31,11 +32,8 @@ public class FullscreenPhotoActivity extends Activity {
 
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.fullscreen_photo, menu);
         return true;
     }
@@ -51,8 +49,9 @@ public class FullscreenPhotoActivity extends Activity {
                         .setCancelable(false)
                         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
-                                Intent resultIntent = new Intent();
+                                Intent resultIntent = new Intent(getApplicationContext(), NewReportActivity.class);
                                 resultIntent.putExtra("pos", pos);
+                                resultIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 setResult(RESULT_OK, resultIntent);
                                 finish();
                             }
@@ -68,6 +67,12 @@ public class FullscreenPhotoActivity extends Activity {
                 alertDialog.show();
 
                 return true;
+            case android.R.id.home:
+                Intent resultIntent = new Intent(getApplicationContext(), NewReportActivity.class);
+                resultIntent.putExtra("pos", -1);
+                resultIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                setResult(RESULT_OK, resultIntent);
+                finish();
             default:
                 return super.onOptionsItemSelected(item);
         }

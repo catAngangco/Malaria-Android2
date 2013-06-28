@@ -24,13 +24,13 @@
     <string name="middle_name">Middle Name</string>
     <string name="new_report_cancel_warning">This report will be discarded. All progress including photos will be lost.</string>
     <string name="next">Next</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
     <string name="queued_entries">Queued Entries</string>
     <string name="sent_entries">Sent Entries</string>
     <string name="submit_new_report">Submit New Report</string>
     <string name="take_photo">Take Photo</string>
-    <string name="title_activity_fullscreen_photo">Full Screen Photo</string>
+    <string name="title_activity_fullscreen_photo"></string>
     <string name="title_activity_new_report">New Report</string>
     <string name="title_activity_new_report_patient_details">New Report</string>
     <string name="warning">Warning</string>
