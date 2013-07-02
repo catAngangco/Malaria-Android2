@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -37,7 +38,9 @@ public class NewReportActivity extends Activity {
     private static final int PHOTO_REQUEST = 4214;
     private Uri fileUri;
     private String imageFilePath;
-    private int stepnum = 1;
+    private int displayedchild;
+    private Resources res;
+    private String[] step_subtitles;
 
     private class myBitmap {
         String path;
@@ -95,9 +98,6 @@ public class NewReportActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getActionBar().setSubtitle("Step " + stepnum + " of 5");
-
         setContentView(R.layout.activity_new_report);
 
         Spinner spinner = (Spinner) findViewById(R.id.gender_spinner);
@@ -107,6 +107,7 @@ public class NewReportActivity extends Activity {
         spinner.setAdapter(adapter);
 
         VF = (ViewFlipper) findViewById(R.id.viewFlipper);
+        getActionBar().setSubtitle("Step 1 of " + VF.getChildCount());
 
         images = new ImageAdapter(this);
         new_report_photos_layout = (GridView) findViewById(R.id.new_report_photos_layout);
@@ -123,22 +124,40 @@ public class NewReportActivity extends Activity {
                 startActivityForResult(intent, PHOTO_REQUEST);
             }
         });
+
+        res = getResources();
+        step_subtitles = new String[]{res.getString(R.string.patient_details), res.getString(R.string.slide_photos), res.getString(R.string.diagnosis), "4", "5"};
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        getActionBar().setSubtitle("Step " + stepnum + " of 5");
+        displayedchild = VF.getDisplayedChild();
+        getActionBar().setSubtitle(String.format("Step %d of %d - %s", displayedchild + 1, VF.getChildCount(), step_subtitles[displayedchild]));
 
-        if (VF.getDisplayedChild() == 0) {
-            menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_cancel).setTitle(R.string.cancel);
-        } else {
-            menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_previous_item).setTitle(R.string.back);
+        switch(displayedchild) {
+            case 0: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_cancel).setTitle(R.string.cancel);
+                    menu.findItem(R.id.action_photo).setVisible(false);
+                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    break;
+            case 1: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+                    menu.findItem(R.id.action_photo).setVisible(true);
+                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    break;
+            case 2: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+                    menu.findItem(R.id.action_photo).setVisible(false);
+                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    break;
+            case 3: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+                    menu.findItem(R.id.action_photo).setVisible(false);
+                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    break;
+            case 4: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+                    menu.findItem(R.id.action_photo).setVisible(false);
+                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_accept).setTitle(R.string.submit);
+                    break;
+            default: break;
         }
-        if (VF.getDisplayedChild() == 1) {
-            menu.findItem(R.id.action_photo).setVisible(true);
-        } else {
-            menu.findItem(R.id.action_photo).setVisible(false);
-        }
+
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -181,14 +200,12 @@ public class NewReportActivity extends Activity {
                     alertDialog.show();
                 } else {
                     VF.showPrevious();
-                    stepnum--;
                 }
                 return true;
             case R.id.action_next:
                 invalidateOptionsMenu();
                 if(VF.getDisplayedChild() != VF.getChildCount()-1) {
                     VF.showNext();
-                    stepnum++;
                 }
                 return true;
             case R.id.action_photo:

@@ -44,9 +44,9 @@
             <file
                 path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/values/strings.xml"
                 qualifiers="" >
-                <string name="action_settings" >Settings
-                </string>
                 <string name="title_activity_fullscreen_image" >FullscreenActivity
+                </string>
+                <string name="action_settings" >Settings
                 </string>
                 <string name="take_photo" >Take Photo
                 </string>
@@ -54,9 +54,9 @@
                 </string>
                 <string name="cancel" >Cancel
                 </string>
-                <string name="ok" >OK
-                </string>
                 <string name="queued_entries" >Queued Entries
+                </string>
+                <string name="ok" >OK
                 </string>
                 <string name="new_report_cancel_warning" >This report will be discarded. All progress including photos will be lost.
                 </string>
@@ -73,6 +73,10 @@
                 </string>
                 <string name="back" >Back
                 </string>
+                <string name="slide_photos" >Slide Photos
+                </string>
+                <string name="submit" >Submit
+                </string>
                 <string name="middle_name" >Middle Name
                 </string>
                 <string name="warning" >Warning
@@ -83,9 +87,13 @@
                 </string>
                 <string name="dummy_button" >Dummy Button
                 </string>
+                <string name="patient_details" >Patient Details
+                </string>
+                <string name="diagnosis" >Diagnosis
+                </string>
                 <string name="submit_new_report" >Submit New Report
                 </string>
-                <string name="title_activity_new_report" >New Report
+                <string name="title_activity_new_report" >Submit New Report
                 </string>
                 <string name="app_name" >Malaria
                 </string>
@@ -97,10 +105,6 @@
                 </string>
                 <string name="photo_delete_warning" >This photo will be deleted. This action is irreversible.
                 </string>
-                <string name="title_activity_new_report_patient_details" >New Report
-                </string>
-                <string name="all_current_progress_will_be_lost" >All current progress will be lost.
-                </string>
 
                 <string-array name="gender_array" >
                     <item>
@@ -111,9 +115,13 @@ Female
                     </item>
                 </string-array>
 
-                <string name="add_new_photo" >Add New Photo
+                <string name="all_current_progress_will_be_lost" >All current progress will be lost.
+                </string>
+                <string name="title_activity_new_report_patient_details" >New Report
                 </string>
                 <string name="given_name" >Given Name
+                </string>
+                <string name="add_new_photo" >Add New Photo
                 </string>
             </file>
             <file
@@ -2402,6 +2410,8 @@ Never
                 </string>
                 <string name="pref_title_social_recommendations" >Enable social recommendations
                 </string>
+                <string name="pref_header_notifications" >Notifications
+                </string>
 
                 <string-array name="pref_sync_frequency_titles" >
                     <item>
@@ -2424,8 +2434,6 @@ Never
                     </item>
                 </string-array>
 
-                <string name="pref_header_notifications" >Notifications
-                </string>
                 <string name="pref_title_system_sync_settings" >System sync settings
                 </string>
                 <string name="pref_header_data_sync" >Data &amp; sync
