@@ -89,7 +89,19 @@
                 android:text="@string/empty_photos_message"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
                 android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
     </RelativeLayout>
 
 </ViewFlipper>
