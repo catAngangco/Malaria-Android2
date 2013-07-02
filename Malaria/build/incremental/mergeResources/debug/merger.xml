@@ -44,9 +44,9 @@
             <file
                 path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/values/strings.xml"
                 qualifiers="" >
-                <string name="title_activity_fullscreen_image" >FullscreenActivity
-                </string>
                 <string name="action_settings" >Settings
+                </string>
+                <string name="title_activity_fullscreen_image" >FullscreenActivity
                 </string>
                 <string name="take_photo" >Take Photo
                 </string>
@@ -54,9 +54,9 @@
                 </string>
                 <string name="cancel" >Cancel
                 </string>
-                <string name="queued_entries" >Queued Entries
-                </string>
                 <string name="ok" >OK
+                </string>
+                <string name="queued_entries" >Queued Entries
                 </string>
                 <string name="new_report_cancel_warning" >This report will be discarded. All progress including photos will be lost.
                 </string>
@@ -66,6 +66,10 @@
                 <string name="dummy_content" >DUMMY\nCONTENT
                 </string>
                 <string name="hello_world" >Hello world!
+                </string>
+                <string name="title_activity_main_activity2" >MainActivity2
+                </string>
+                <string name="empty_photos_message" >Click the camera button below to add new photos.
                 </string>
                 <string name="back" >Back
                 </string>
@@ -93,6 +97,10 @@
                 </string>
                 <string name="photo_delete_warning" >This photo will be deleted. This action is irreversible.
                 </string>
+                <string name="title_activity_new_report_patient_details" >New Report
+                </string>
+                <string name="all_current_progress_will_be_lost" >All current progress will be lost.
+                </string>
 
                 <string-array name="gender_array" >
                     <item>
@@ -103,13 +111,9 @@ Female
                     </item>
                 </string-array>
 
-                <string name="all_current_progress_will_be_lost" >All current progress will be lost.
-                </string>
-                <string name="title_activity_new_report_patient_details" >New Report
+                <string name="add_new_photo" >Add New Photo
                 </string>
                 <string name="given_name" >Given Name
-                </string>
-                <string name="add_new_photo" >Add New Photo
                 </string>
             </file>
             <file
@@ -2304,6 +2308,134 @@ Female
                 path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/menu/fullscreen_photo.xml"
                 qualifiers=""
                 type="menu" />
+            <file
+                name="pref_notification"
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/xml/pref_notification.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_general"
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/xml/pref_general.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_headers"
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/xml/pref_headers.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_data_sync"
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/xml/pref_data_sync.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/values/strings_activity_settings.xml"
+                qualifiers="" >
+                <string-array name="pref_sync_frequency_values" >
+                    <item>
+15
+                    </item>
+                    <item>
+30
+                    </item>
+                    <item>
+60
+                    </item>
+                    <item>
+180
+                    </item>
+                    <item>
+360
+                    </item>
+                    <item>
+-1
+                    </item>
+                </string-array>
+
+                <string name="title_activity_settings" >Settings
+                </string>
+                <string name="pref_ringtone_silent" >Silent
+                </string>
+
+                <string-array name="pref_example_list_values" >
+                    <item>
+1
+                    </item>
+                    <item>
+0
+                    </item>
+                    <item>
+-1
+                    </item>
+                </string-array>
+
+                <string name="pref_title_display_name" >Display name
+                </string>
+                <string name="pref_title_sync_frequency" >Sync frequency
+                </string>
+                <string name="pref_description_social_recommendations" >Recommendations for people to contact based on your message history
+                </string>
+                <string name="pref_header_general" >General
+                </string>
+                <string name="pref_title_add_friends_to_messages" >Add friends to messages
+                </string>
+                <string name="pref_default_display_name" >John Smith
+                </string>
+
+                <string-array name="pref_example_list_titles" >
+                    <item>
+Always
+                    </item>
+                    <item>
+When possible
+                    </item>
+                    <item>
+Never
+                    </item>
+                </string-array>
+
+                <string name="pref_title_new_message_notifications" >New message notifications
+                </string>
+                <string name="pref_title_vibrate" >Vibrate
+                </string>
+                <string name="pref_title_ringtone" >Ringtone
+                </string>
+                <string name="pref_title_social_recommendations" >Enable social recommendations
+                </string>
+
+                <string-array name="pref_sync_frequency_titles" >
+                    <item>
+15 minutes
+                    </item>
+                    <item>
+30 minutes
+                    </item>
+                    <item>
+1 hour
+                    </item>
+                    <item>
+3 hours
+                    </item>
+                    <item>
+6 hours
+                    </item>
+                    <item>
+Never
+                    </item>
+                </string-array>
+
+                <string name="pref_header_notifications" >Notifications
+                </string>
+                <string name="pref_title_system_sync_settings" >System sync settings
+                </string>
+                <string name="pref_header_data_sync" >Data &amp; sync
+                </string>
+            </file>
+            <file
+                name="test"
+                path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/layout/test.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/build/res/rs/debug" />
     </dataSet>

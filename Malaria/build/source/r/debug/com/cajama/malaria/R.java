@@ -10,6 +10,10 @@ package com.cajama.malaria;
 public final class R {
     public static final class array {
         public static final int gender_array=0x7f040000;
+        public static final int pref_example_list_titles=0x7f040001;
+        public static final int pref_example_list_values=0x7f040002;
+        public static final int pref_sync_frequency_titles=0x7f040003;
+        public static final int pref_sync_frequency_values=0x7f040004;
     }
     public static final class attr {
     }
@@ -163,15 +167,16 @@ public final class R {
         public static final int social_share=0x7f02008e;
     }
     public static final class id {
-        public static final int action_delete_photo=0x7f09000d;
-        public static final int action_next=0x7f090011;
-        public static final int action_photo=0x7f090010;
-        public static final int action_prev=0x7f09000f;
-        public static final int action_settings=0x7f09000e;
+        public static final int action_delete_photo=0x7f09000e;
+        public static final int action_next=0x7f090012;
+        public static final int action_photo=0x7f090011;
+        public static final int action_prev=0x7f090010;
+        public static final int action_settings=0x7f09000f;
         public static final int button=0x7f090001;
         public static final int button2=0x7f090002;
         public static final int button3=0x7f090003;
         public static final int clientEditCreate_BirthDateDayPicker=0x7f090009;
+        public static final int empty_list_view=0x7f09000d;
         public static final int first_flip=0x7f090005;
         public static final int fullscreen_imageView=0x7f090000;
         public static final int gender_spinner=0x7f09000a;
@@ -186,6 +191,7 @@ public final class R {
         public static final int activity_fullscreen_photo=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_new_report=0x7f030002;
+        public static final int test=0x7f030003;
     }
     public static final class menu {
         public static final int fullscreen_photo=0x7f080000;
@@ -202,22 +208,38 @@ public final class R {
         public static final int cancel=0x7f060006;
         public static final int delete=0x7f060007;
         public static final int delete_photo=0x7f060008;
-        public static final int given_name=0x7f060009;
-        public static final int hello_world=0x7f06000a;
-        public static final int last_name=0x7f06000b;
-        public static final int middle_name=0x7f06000c;
-        public static final int new_report_cancel_warning=0x7f06000d;
-        public static final int next=0x7f06000e;
-        public static final int ok=0x7f06000f;
-        public static final int photo_delete_warning=0x7f060010;
-        public static final int queued_entries=0x7f060011;
-        public static final int sent_entries=0x7f060012;
-        public static final int submit_new_report=0x7f060013;
-        public static final int take_photo=0x7f060014;
-        public static final int title_activity_fullscreen_photo=0x7f060015;
-        public static final int title_activity_new_report=0x7f060016;
-        public static final int title_activity_new_report_patient_details=0x7f060017;
-        public static final int warning=0x7f060018;
+        public static final int empty_photos_message=0x7f060009;
+        public static final int given_name=0x7f06000a;
+        public static final int hello_world=0x7f06000b;
+        public static final int last_name=0x7f06000c;
+        public static final int middle_name=0x7f06000d;
+        public static final int new_report_cancel_warning=0x7f06000e;
+        public static final int next=0x7f06000f;
+        public static final int ok=0x7f060010;
+        public static final int photo_delete_warning=0x7f060011;
+        public static final int pref_default_display_name=0x7f060012;
+        public static final int pref_description_social_recommendations=0x7f060013;
+        public static final int pref_header_data_sync=0x7f060014;
+        public static final int pref_header_general=0x7f060015;
+        public static final int pref_header_notifications=0x7f060016;
+        public static final int pref_ringtone_silent=0x7f060017;
+        public static final int pref_title_add_friends_to_messages=0x7f060018;
+        public static final int pref_title_display_name=0x7f060019;
+        public static final int pref_title_new_message_notifications=0x7f06001a;
+        public static final int pref_title_ringtone=0x7f06001b;
+        public static final int pref_title_social_recommendations=0x7f06001c;
+        public static final int pref_title_sync_frequency=0x7f06001d;
+        public static final int pref_title_system_sync_settings=0x7f06001e;
+        public static final int pref_title_vibrate=0x7f06001f;
+        public static final int queued_entries=0x7f060020;
+        public static final int sent_entries=0x7f060021;
+        public static final int submit_new_report=0x7f060022;
+        public static final int take_photo=0x7f060023;
+        public static final int title_activity_fullscreen_photo=0x7f060024;
+        public static final int title_activity_new_report=0x7f060025;
+        public static final int title_activity_new_report_patient_details=0x7f060026;
+        public static final int title_activity_settings=0x7f060027;
+        public static final int warning=0x7f060028;
     }
     public static final class style {
         /** 

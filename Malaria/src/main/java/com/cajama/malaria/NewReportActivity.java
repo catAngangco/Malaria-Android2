@@ -37,6 +37,7 @@ public class NewReportActivity extends Activity {
     private static final int PHOTO_REQUEST = 4214;
     private Uri fileUri;
     private String imageFilePath;
+    private int stepnum = 1;
 
     private class myBitmap {
         String path;
@@ -94,6 +95,9 @@ public class NewReportActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getActionBar().setSubtitle("Step " + stepnum + " of 5");
+
         setContentView(R.layout.activity_new_report);
 
         Spinner spinner = (Spinner) findViewById(R.id.gender_spinner);
@@ -106,6 +110,7 @@ public class NewReportActivity extends Activity {
 
         images = new ImageAdapter(this);
         new_report_photos_layout = (GridView) findViewById(R.id.new_report_photos_layout);
+        new_report_photos_layout.setEmptyView(findViewById(R.id.empty_list_view));
         new_report_photos_layout.setAdapter(images);
 
         new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -122,6 +127,8 @@ public class NewReportActivity extends Activity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
+        getActionBar().setSubtitle("Step " + stepnum + " of 5");
+
         if (VF.getDisplayedChild() == 0) {
             menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_cancel).setTitle(R.string.cancel);
         } else {
@@ -174,12 +181,14 @@ public class NewReportActivity extends Activity {
                     alertDialog.show();
                 } else {
                     VF.showPrevious();
+                    stepnum--;
                 }
                 return true;
             case R.id.action_next:
                 invalidateOptionsMenu();
                 if(VF.getDisplayedChild() != VF.getChildCount()-1) {
                     VF.showNext();
+                    stepnum++;
                 }
                 return true;
             case R.id.action_photo:

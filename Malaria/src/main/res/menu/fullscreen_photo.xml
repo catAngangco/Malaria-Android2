@@ -3,6 +3,6 @@
           android:title="@string/delete_photo"
           android:visible="true"
           android:orderInCategory="100"
-          android:icon="@drawable/navigation_cancel"
-          android:showAsAction="never" />
+          android:icon="@drawable/content_discard"
+          android:showAsAction="always" />
 </menu>
