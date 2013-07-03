@@ -126,7 +126,12 @@ public class NewReportActivity extends Activity {
         });
 
         res = getResources();
-        step_subtitles = new String[]{res.getString(R.string.patient_details), res.getString(R.string.slide_photos), res.getString(R.string.diagnosis), "4", "5"};
+        step_subtitles = new String[]{
+                res.getString(R.string.patient_details),
+                res.getString(R.string.slide_photos),
+                res.getString(R.string.diagnosis),
+                "4",
+                "5"};
     }
 
     @Override
@@ -211,7 +216,7 @@ public class NewReportActivity extends Activity {
             case R.id.action_photo:
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_picture.jpg";
+                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_slide.jpg";
 
                 File imageFile = new File(imageFilePath);
                 fileUri = Uri.fromFile(imageFile);
