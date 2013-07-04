@@ -2207,9 +2207,9 @@
                 </string>
                 <string name="cancel" >Cancel
                 </string>
-                <string name="queued_entries" >Queued Entries
-                </string>
                 <string name="ok" >OK
+                </string>
+                <string name="queued_entries" >Queued Entries
                 </string>
                 <string name="new_report_cancel_warning" >This report will be discarded. All progress including photos will be lost.
                 </string>
@@ -2218,7 +2218,7 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="empty_photos_message" >Click the camera button below to add a new photo.
+                <string name="empty_photos_message" >Click the camera icon to add a new photo.
                 </string>
                 <string name="back" >Back
                 </string>
@@ -2244,15 +2244,17 @@
                 </string>
                 <string name="title_activity_new_report" >Submit New Report
                 </string>
-                <string name="birthday" >Birthday
-                </string>
                 <string name="app_name" >Malaria
+                </string>
+                <string name="birthday" >Birthday
                 </string>
                 <string name="next" >Next
                 </string>
                 <string name="delete" >Delete
                 </string>
                 <string name="photo_delete_warning" >This photo will be deleted. This action is irreversible.
+                </string>
+                <string name="title_activity_new_report_patient_details" >New Report
                 </string>
 
                 <string-array name="gender_array" >
@@ -2264,11 +2266,9 @@ Female
                     </item>
                 </string-array>
 
-                <string name="title_activity_new_report_patient_details" >New Report
+                <string name="given_name" >Given Name
                 </string>
                 <string name="add_new_photo" >Add New Photo
-                </string>
-                <string name="given_name" >Given Name
                 </string>
             </file>
             <file

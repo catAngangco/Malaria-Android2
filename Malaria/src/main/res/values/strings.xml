@@ -31,7 +31,7 @@
     <string name="new_report_cancel_warning">This report will be discarded. All progress including photos will be lost.</string>
     <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
     <string name="ok">OK</string>
-    <string name="empty_photos_message">Click the camera button below to add a new photo.</string>
+    <string name="empty_photos_message">Click the camera icon to add a new photo.</string>
     <string name="patient_details">Patient Details</string>
     <string name="slide_photos">Slide Photos</string>
     <string name="diagnosis">Diagnosis</string>
