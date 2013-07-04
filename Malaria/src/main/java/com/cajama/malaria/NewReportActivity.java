@@ -130,8 +130,9 @@ public class NewReportActivity extends Activity {
                 res.getString(R.string.patient_details),
                 res.getString(R.string.slide_photos),
                 res.getString(R.string.diagnosis),
-                "4",
-                "5"};
+                res.getString(R.string.summary),
+                res.getString(R.string.submit)
+        };
     }
 
     @Override
