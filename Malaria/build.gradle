@@ -9,7 +9,8 @@ buildscript {
 apply plugin: 'android'
 
 dependencies {
-    compile files('libs/android-support-v4.jar')
+    compile 'com.android.support:support-v4:13.0.0'
+    compile project(':libraries:ActionBarSherlock:actionbarsherlock')
 }
 
 android {

@@ -19,3 +19,4 @@
           android:icon="@drawable/navigation_forward"
           android:showAsAction="always|withText" />
 </menu>
+<!-- From: /Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/res/menu/new_report.xml -->

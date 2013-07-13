@@ -1,6 +1,5 @@
 package com.cajama.malaria;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,8 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -23,14 +20,17 @@ import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.ViewFlipper;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.cajama.android.customviews.SquareImageView;
+import com.actionbarsherlock.view.MenuItem;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import java.util.Date;
 
-public class NewReportActivity extends Activity {
+public class NewReportActivity extends SherlockActivity {
     ViewFlipper VF;
     GridView new_report_photos_layout;
     ImageAdapter images;
@@ -107,7 +107,7 @@ public class NewReportActivity extends Activity {
         spinner.setAdapter(adapter);
 
         VF = (ViewFlipper) findViewById(R.id.viewFlipper);
-        getActionBar().setSubtitle("Step 1 of " + VF.getChildCount());
+        getSupportActionBar().setSubtitle("Step 1 of " + VF.getChildCount());
 
         images = new ImageAdapter(this);
         new_report_photos_layout = (GridView) findViewById(R.id.new_report_photos_layout);
@@ -138,7 +138,7 @@ public class NewReportActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         displayedchild = VF.getDisplayedChild();
-        getActionBar().setSubtitle(String.format("Step %d of %d - %s", displayedchild + 1, VF.getChildCount(), step_subtitles[displayedchild]));
+        getSupportActionBar().setSubtitle(String.format("Step %d of %d - %s", displayedchild + 1, VF.getChildCount(), step_subtitles[displayedchild]));
 
         switch(displayedchild) {
             case 0: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_cancel).setTitle(R.string.cancel);
@@ -169,7 +169,7 @@ public class NewReportActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.new_report, menu);
+        getSupportMenuInflater().inflate(R.menu.new_report, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

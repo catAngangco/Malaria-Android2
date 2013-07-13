@@ -1,8 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/action_delete_photo"
-          android:title="@string/delete_photo"
-          android:visible="true"
-          android:orderInCategory="100"
-          android:icon="@drawable/navigation_cancel"
-          android:showAsAction="never" />
-</menu>
