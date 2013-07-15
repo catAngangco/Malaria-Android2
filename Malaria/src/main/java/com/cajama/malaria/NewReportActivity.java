@@ -141,25 +141,25 @@ public class NewReportActivity extends SherlockActivity {
         getSupportActionBar().setSubtitle(String.format("Step %d of %d - %s", displayedchild + 1, VF.getChildCount(), step_subtitles[displayedchild]));
 
         switch(displayedchild) {
-            case 0: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_cancel).setTitle(R.string.cancel);
+            case 0: menu.findItem(R.id.action_prev).setTitle(R.string.cancel);
                     menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    menu.findItem(R.id.action_next).setTitle(R.string.next);
                     break;
-            case 1: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+            case 1: menu.findItem(R.id.action_prev).setTitle(R.string.back);
                     menu.findItem(R.id.action_photo).setVisible(true);
-                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    menu.findItem(R.id.action_next).setTitle(R.string.next);
                     break;
-            case 2: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+            case 2: menu.findItem(R.id.action_prev).setTitle(R.string.back);
                     menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    menu.findItem(R.id.action_next).setTitle(R.string.next);
                     break;
-            case 3: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+            case 3: menu.findItem(R.id.action_prev).setTitle(R.string.back);
                     menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_forward).setTitle(R.string.next);
+                    menu.findItem(R.id.action_next).setTitle(R.string.next);
                     break;
-            case 4: menu.findItem(R.id.action_prev).setIcon(R.drawable.navigation_back2).setTitle(R.string.back);
+            case 4: menu.findItem(R.id.action_prev).setTitle(R.string.back);
                     menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setIcon(R.drawable.navigation_accept).setTitle(R.string.submit);
+                    menu.findItem(R.id.action_next).setTitle(R.string.submit);
                     break;
             default: break;
         }
