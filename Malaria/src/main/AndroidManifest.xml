@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -35,6 +37,14 @@
         <activity
             android:name="com.cajama.malaria.FullscreenPhotoActivity"
             android:label="@string/title_activity_fullscreen_photo" >
+        </activity>
+        <activity
+            android:name="com.cajama.malaria.QueueLogActivity"
+            android:label="@string/title_activity_queue_log" >
+        </activity>
+        <activity
+            android:name="com.cajama.malaria.SentLogActivity"
+            android:label="@string/title_activity_sent_log" >
         </activity>
     </application>
 

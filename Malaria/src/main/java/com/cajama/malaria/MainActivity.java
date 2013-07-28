@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 
 public class MainActivity extends Activity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +23,16 @@ public class MainActivity extends Activity {
 
     public void submitNewReport(View view) {
         Intent intent = new Intent(this, NewReportActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewQueueLog(View view) {
+        Intent intent = new Intent(this, QueueLogActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewSentLog(View view) {
+        Intent intent = new Intent(this, SentLogActivity.class);
         startActivity(intent);
     }
 
