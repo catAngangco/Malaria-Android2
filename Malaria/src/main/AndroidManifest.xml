@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cajama.malaria.NewReportActivity"
+            android:name=".newreport.NewReportActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_new_report"
             android:uiOptions="splitActionBarWhenNarrow" >

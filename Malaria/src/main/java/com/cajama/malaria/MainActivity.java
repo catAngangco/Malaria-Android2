@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.cajama.malaria.newreport.NewReportActivity;
+
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -22,4 +22,4 @@
      android:layout_height="wrap_content"
      android:visibility="gone"
      style="?attr/actionModeStyle" />
-<!-- From: /Users/cajama/AndroidStudioProjects/MalariaProject/libraries/ActionBarSherlock/actionbarsherlock/res/layout/abs__action_mode_bar.xml -->
+<!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/libraries/ActionBarSherlock/actionbarsherlock/res/layout/abs__action_mode_bar.xml -->

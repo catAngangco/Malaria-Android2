@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.cajama.malaria">
 
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="17"/>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature android:name="android.hardware.camera"/>
@@ -14,9 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_new_report" android:name="com.cajama.malaria.NewReportActivity" android:uiOptions="splitActionBarWhenNarrow">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_new_report" android:name="com.cajama.malaria.newreport.NewReportActivity" android:uiOptions="splitActionBarWhenNarrow">
         </activity>
         <activity android:label="@string/title_activity_fullscreen_photo" android:name="com.cajama.malaria.FullscreenPhotoActivity">
+        </activity>
+        <activity android:label="@string/title_activity_queue_log" android:name="com.cajama.malaria.QueueLogActivity">
+        </activity>
+        <activity android:label="@string/title_activity_sent_log" android:name="com.cajama.malaria.SentLogActivity">
         </activity>
     </application>
 

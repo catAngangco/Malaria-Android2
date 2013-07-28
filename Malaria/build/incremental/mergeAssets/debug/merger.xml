@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger>
 
-    <dataSet config="MalariaProjectLibrariesActionBarSherlockActionbarsherlockUnspecified.aar" >
-        <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/build/exploded-bundles/MalariaProjectLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/assets" />
+    <dataSet config="MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar" >
+        <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/assets" />
     </dataSet>
     <dataSet config="main" >
-        <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/main/assets" />
+        <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/Malaria/src/debug/assets" />
+        <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/src/debug/assets" />
     </dataSet>
 
 </merger>

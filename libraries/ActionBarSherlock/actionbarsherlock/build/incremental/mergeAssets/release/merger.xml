@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/libraries/ActionBarSherlock/actionbarsherlock/assets" />
+        <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/libraries/ActionBarSherlock/actionbarsherlock/assets" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/Users/cajama/AndroidStudioProjects/MalariaProject/libraries/ActionBarSherlock/actionbarsherlock/src/release/assets" />
+        <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/libraries/ActionBarSherlock/actionbarsherlock/src/release/assets" />
     </dataSet>
 
 </merger>

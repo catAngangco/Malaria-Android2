@@ -43,6 +43,7 @@
         <item>Plasmodium vivax</item>
         <item>Plasmodium ovale</item>
         <item>Plasmodium malariae</item>
+        <item>No Malaria</item>
     </string-array>
 
     <string name="notes">Notes</string>
