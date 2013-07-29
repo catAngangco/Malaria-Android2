@@ -62,4 +62,6 @@
     <string name="title_activity_queue_log">Queued Entries</string>
     <string name="title_activity_sent_log">Sent Entries</string>
 
+    <string name="home">Home</string>
+
 </resources>
