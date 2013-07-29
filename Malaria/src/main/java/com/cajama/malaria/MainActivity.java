@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.cajama.malaria.entryLogs.QueueLogActivity;
+import com.cajama.malaria.entryLogs.SentLogActivity;
 import com.cajama.malaria.newreport.NewReportActivity;
 
 public class MainActivity extends Activity {

@@ -1,22 +1,18 @@
-package com.cajama.malaria;
+package com.cajama.malaria.entryLogs;
 
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
+
+import com.cajama.malaria.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class QueueLogActivity extends ListActivity {
     private ArrayList<HashMap> list;

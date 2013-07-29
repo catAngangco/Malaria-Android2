@@ -1,4 +1,4 @@
-package com.cajama.malaria;
+package com.cajama.malaria.entryLogs;
 
 import android.util.Log;
 

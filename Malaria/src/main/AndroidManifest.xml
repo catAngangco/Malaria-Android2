@@ -39,11 +39,11 @@
             android:label="@string/title_activity_fullscreen_photo" >
         </activity>
         <activity
-            android:name="com.cajama.malaria.QueueLogActivity"
+            android:name=".entryLogs.QueueLogActivity"
             android:label="@string/title_activity_queue_log" >
         </activity>
         <activity
-            android:name="com.cajama.malaria.SentLogActivity"
+            android:name=".entryLogs.SentLogActivity"
             android:label="@string/title_activity_sent_log" >
         </activity>
     </application>
