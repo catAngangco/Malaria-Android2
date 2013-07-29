@@ -18,13 +18,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
-            <TextView
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/entry_name"
-                    android:id="@+id/textView"
-                    android:layout_column="0"/>
 
             <TextView
                     android:layout_width="0px"
@@ -32,7 +25,7 @@
                     android:layout_weight="1"
                     android:text="@string/date_sent"
                     android:id="@+id/textView2"
-                    android:layout_column="1"/>
+                    android:layout_column="0"/>
 
             <TextView
                     android:layout_width="0px"
@@ -40,22 +33,23 @@
                     android:layout_weight="1"
                     android:text="@string/time_sent"
                     android:id="@+id/textView3"
-                    android:layout_column="2"/>
+                    android:layout_column="1"/>
 
-            <ScrollView
-                    android:layout_width="wrap_content"
+            <TextView
+                    android:layout_width="0px"
                     android:layout_height="wrap_content"
-                    android:id="@+id/scrollView"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignLeft="@+id/tableLayout">
-
-                <TableLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-                </TableLayout>
-            </ScrollView>
+                    android:layout_weight="1"
+                    android:text="@string/entry_name"
+                    android:id="@+id/textView"
+                    android:layout_column="2"/>
         </TableRow>
     </TableLayout>
+
+    <ListView
+            android:id="@android:id/list"
+            android:paddingTop="30px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     <ImageView
             android:layout_width="60px"
             android:layout_height="100px"

@@ -6788,6 +6788,11 @@ center
                     <!-- API 11 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="entry_row"
+                path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/src/main/res/layout/entry_row.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/rs/debug" />
     </dataSet>

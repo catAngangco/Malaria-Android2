@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class MakeTextFile {
     private File file;
     private ArrayList<String> contentArray;
+    private boolean append;
 
-    public MakeTextFile(File file, ArrayList<String> contentArray){
+    public MakeTextFile(File file, ArrayList<String> contentArray, boolean append){
         this.file = file;
         this.contentArray = contentArray;
+        this.append = append;
     }
 
     private String combineData(){
@@ -32,7 +34,7 @@ public class MakeTextFile {
     public void writeTextFile(){
         Log.v("write","text");
         try {
-            OutputStream os = new FileOutputStream(file);
+            OutputStream os = new FileOutputStream(file,append);
             String metaData = "";
 
             os.write(combineData().getBytes());

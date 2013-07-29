@@ -1035,15 +1035,16 @@ containing a value of this type.
         public static final int abs__textButton=0x7f070013;
         public static final int abs__title=0x7f07001b;
         public static final int abs__up=0x7f07000f;
-        public static final int action_delete_photo=0x7f070067;
-        public static final int action_next=0x7f07006b;
-        public static final int action_photo=0x7f07006a;
-        public static final int action_prev=0x7f070069;
-        public static final int action_settings=0x7f070068;
+        public static final int action_delete_photo=0x7f070069;
+        public static final int action_next=0x7f07006d;
+        public static final int action_photo=0x7f07006c;
+        public static final int action_prev=0x7f07006b;
+        public static final int action_settings=0x7f07006a;
         public static final int button=0x7f070035;
         public static final int button2=0x7f07003a;
         public static final int button3=0x7f07003c;
         public static final int clientEditCreate_BirthDateDayPicker=0x7f070042;
+        public static final int date=0x7f070065;
         public static final int diagnostic_notes=0x7f07004a;
         public static final int disableHome=0x7f070008;
         public static final int editText=0x7f070033;
@@ -1063,11 +1064,12 @@ containing a value of this type.
         public static final int last_name_textfield=0x7f070041;
         public static final int listMode=0x7f070001;
         public static final int middle_name_textfield=0x7f070040;
+        public static final int name=0x7f070067;
         public static final int new_report_photos_layout=0x7f070045;
         public static final int normal=0x7f070000;
         public static final int notes=0x7f070049;
         public static final int password=0x7f070037;
-        public static final int scrollView=0x7f070065;
+        public static final int scrollView=0x7f070068;
         public static final int second_flip=0x7f070044;
         public static final int showCustom=0x7f070007;
         public static final int showHome=0x7f070004;
@@ -1099,7 +1101,7 @@ containing a value of this type.
         public static final int textViewb=0x7f07005d;
         public static final int textViewlat=0x7f07005f;
         public static final int textViewlong=0x7f070061;
-        public static final int third_flip=0x7f070066;
+        public static final int time=0x7f070066;
         public static final int useLogo=0x7f070003;
         public static final int username=0x7f070036;
         public static final int viewFlipper=0x7f07003d;
@@ -1141,9 +1143,10 @@ containing a value of this type.
         public static final int activity_new_report=0x7f030019;
         public static final int activity_queuelog=0x7f03001a;
         public static final int activity_sentlog=0x7f03001b;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
-        public static final int sherlock_spinner_item=0x7f03001d;
-        public static final int test=0x7f03001e;
+        public static final int entry_row=0x7f03001c;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001d;
+        public static final int sherlock_spinner_item=0x7f03001e;
+        public static final int test=0x7f03001f;
     }
     public static final class menu {
         public static final int fullscreen_photo=0x7f0c0000;

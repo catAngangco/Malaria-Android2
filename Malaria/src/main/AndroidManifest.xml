@@ -35,7 +35,7 @@
             android:uiOptions="splitActionBarWhenNarrow" >
         </activity>
         <activity
-            android:name="com.cajama.malaria.FullscreenPhotoActivity"
+            android:name=".newreport.FullscreenPhotoActivity"
             android:label="@string/title_activity_fullscreen_photo" >
         </activity>
         <activity

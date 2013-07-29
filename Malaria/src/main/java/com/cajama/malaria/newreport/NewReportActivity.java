@@ -29,7 +29,6 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.cajama.android.customviews.DateDisplayPicker;
 import com.cajama.android.customviews.SquareImageView;
-import com.cajama.malaria.FullscreenPhotoActivity;
 import com.cajama.malaria.R;
 
 import java.io.File;
@@ -48,6 +47,7 @@ public class NewReportActivity extends SherlockActivity{
     private String[] step_subtitles;
     ArrayList<String> entryList = new ArrayList<String>();
     ArrayList<String> accountList = new ArrayList<String>();
+    ArrayList<String> entryLog = new ArrayList<String>();
     private static final String PATIENT_TXT_FILENAME = "textData.txt";
     private static final String ACCOUNT_TXT_FILENAME = "accountData.txt";
     private static final String PATIENT_ZIP_FILENAME = "entryData.zip";
@@ -361,11 +361,13 @@ public class NewReportActivity extends SherlockActivity{
         TextView textViewA = (TextView) findViewById(R.id.textViewA);
         textViewA.setText(dateCreated);
         entryList.add(dateCreated);
+        entryLog.add(dateCreated);
         //time
         timeCreated = today.format("%H:%M:%S");
         TextView textViewB = (TextView) findViewById(R.id.textViewB);
         textViewB.setText(timeCreated);
         entryList.add(timeCreated);
+        entryLog.add(timeCreated);
 
         //latitude & longitude
         GetLocation getLoc = new GetLocation(this);
@@ -436,7 +438,7 @@ public class NewReportActivity extends SherlockActivity{
         entryList.add(diagnosisNotes);
     }
 
-    private void getAccountData(){
+    private String getAccountData(){
         String USERNAME, PASSWORD;
         EditText editText1=(EditText )findViewById(R.id.username);
         EditText editText2=(EditText )findViewById(R.id.password);
@@ -445,7 +447,10 @@ public class NewReportActivity extends SherlockActivity{
         Log.v("write","USERNAME: " + USERNAME + " PASSWORD: " + PASSWORD);
         accountList.add(USERNAME);
         accountList.add(PASSWORD);
+        entryLog.add(USERNAME);
         Log.v("write","stuff: " + accountList.get(0) + accountList.get(1));
+
+        return USERNAME;
     }
 
     private String[] getFirstZipArray(){
@@ -458,9 +463,10 @@ public class NewReportActivity extends SherlockActivity{
         }
         for (int i=1; i < images.getCount()+1;i++ ) fileList.add(i,images.getItem(i-1).path);
         String[] entryData = new String[fileList.size()];
-        for(int i=0;i<fileList.size();i++) entryData[i] = fileList.get(i);
+        //for(int i=0;i<fileList.size();i++) entryData[i] = fileList.get(i);
 
-        return entryData;
+       return fileList.toArray(entryData);
+
     }
 
     private String[] getSecondZipArray(){
@@ -473,21 +479,27 @@ public class NewReportActivity extends SherlockActivity{
     private void submitFinishedReport() {
 
         File entryFile = new File (getExternalFilesDir(null), PATIENT_TXT_FILENAME);
-        MakeTextFile patient = new MakeTextFile(entryFile,entryList);
+        MakeTextFile patient = new MakeTextFile(entryFile,entryList, false);
         patient.writeTextFile();
 
         File zipFile1 = new File (getExternalFilesDir(null), PATIENT_ZIP_FILENAME);
         Compress firstZip = new Compress(getFirstZipArray(),zipFile1.getPath());
         firstZip.zip();
 
-        getAccountData();
+        String USERNAME = getAccountData();
         File accountFile = new File(getExternalFilesDir(null),ACCOUNT_TXT_FILENAME);
-        MakeTextFile account = new MakeTextFile(accountFile,accountList);
+        MakeTextFile account = new MakeTextFile(accountFile,accountList, false);
         account.writeTextFile();
 
-        File zipFile2 = new File (getExternalFilesDir(null), FINAL_ZIP_FILENAME);
+        Time today = new Time(Time.getCurrentTimezone());
+        today.setToNow();
+        File zipFile2 = new File (getExternalFilesDir("ZipFiles"), today.format("%m%d%Y_%H%M%S")+"_"+ USERNAME + ".zip");
         Compress secondZip = new Compress(getSecondZipArray(),zipFile2.getPath());
         secondZip.zip();
+
+        File queueLog = new File (getExternalFilesDir("queueLog"), "queueLog.txt");
+        MakeTextFile queueFile = new MakeTextFile(queueLog, entryLog,true);
+        queueFile.writeTextFile();
 
         onDestroy();
     }
