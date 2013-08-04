@@ -1,7 +1,6 @@
 package com.cajama.malaria.newreport;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -14,10 +13,8 @@ import android.provider.MediaStore;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Spinner;
@@ -28,14 +25,12 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.cajama.android.customviews.DateDisplayPicker;
-import com.cajama.android.customviews.SquareImageView;
 import com.cajama.malaria.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Vector;
 
 public class NewReportActivity extends SherlockActivity{
     ViewFlipper VF;
@@ -47,64 +42,6 @@ public class NewReportActivity extends SherlockActivity{
     private String[] step_subtitles;
     ArrayList<String> entryList = new ArrayList<String>();
     ArrayList<String> accountList = new ArrayList<String>();
-    ArrayList<String> entryLog = new ArrayList<String>();
-    private static final String PATIENT_TXT_FILENAME = "textData.txt";
-    private static final String ACCOUNT_TXT_FILENAME = "accountData.txt";
-    private static final String PATIENT_ZIP_FILENAME = "entryData.zip";
-    private static final String FINAL_ZIP_FILENAME = "travelingData.zip";
-
-    private class myBitmap {
-        String path;
-        Bitmap image;
-    }
-
-    private class ImageAdapter extends BaseAdapter {
-        private Context mContext;
-        private Vector<myBitmap> images = new Vector<myBitmap>();
-
-        public ImageAdapter(Context c) {
-            mContext = c;
-        }
-
-        public void AddImage(myBitmap b) {
-            images.add(b);
-        }
-
-        public void remove(int pos) {
-            images.remove(pos);
-        }
-
-        @Override
-        public int getCount() {
-            return images.size();
-        }
-
-        @Override
-        public myBitmap getItem(int arg0) {
-            return images.get(arg0);
-        }
-
-        @Override
-        public long getItemId(int arg0) {
-            return arg0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            SquareImageView img;
-            if(convertView ==null) {
-                img = new SquareImageView(mContext);
-            }
-            else {
-                img = (SquareImageView)convertView;
-            }
-
-            img.setImageBitmap(images.get(position).image);
-            img.setScaleType(SquareImageView.ScaleType.CENTER_CROP);
-            return img;
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,7 +132,6 @@ public class NewReportActivity extends SherlockActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_prev:
-
                 if (VF.getDisplayedChild() == 0) {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                     alertDialogBuilder
@@ -291,12 +227,10 @@ public class NewReportActivity extends SherlockActivity{
             BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
             bmpFactoryOptions.inJustDecodeBounds = true;
 
-            Bitmap bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
-
             bmpFactoryOptions.inSampleSize = calculateInSampleSize(bmpFactoryOptions, 100, 100);
             bmpFactoryOptions.inJustDecodeBounds = false;
 
-            bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
+            Bitmap bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
 
             myBitmap bmpp = new myBitmap();
             bmpp.image = bmp;
@@ -361,13 +295,11 @@ public class NewReportActivity extends SherlockActivity{
         TextView textViewA = (TextView) findViewById(R.id.textViewA);
         textViewA.setText(dateCreated);
         entryList.add(dateCreated);
-        entryLog.add(dateCreated);
         //time
         timeCreated = today.format("%H:%M:%S");
         TextView textViewB = (TextView) findViewById(R.id.textViewB);
         textViewB.setText(timeCreated);
         entryList.add(timeCreated);
-        entryLog.add(timeCreated);
 
         //latitude & longitude
         GetLocation getLoc = new GetLocation(this);
@@ -447,65 +379,21 @@ public class NewReportActivity extends SherlockActivity{
         Log.v("write","USERNAME: " + USERNAME + " PASSWORD: " + PASSWORD);
         accountList.add(USERNAME);
         accountList.add(PASSWORD);
-        entryLog.add(USERNAME);
         Log.v("write","stuff: " + accountList.get(0) + accountList.get(1));
 
         return USERNAME;
     }
 
-    private String[] getFirstZipArray(){
-        ArrayList<String> fileList = new ArrayList<String>();
-        try{
-            fileList.add(0,getExternalFilesDir(null).getPath() + "/" + PATIENT_TXT_FILENAME);
-        }
-        catch (Exception e){
-            Log.v("Error","arrayList error");
-        }
-        for (int i=1; i < images.getCount()+1;i++ ) fileList.add(i,images.getItem(i-1).path);
-        String[] entryData = new String[fileList.size()];
-        //for(int i=0;i<fileList.size();i++) entryData[i] = fileList.get(i);
-
-       return fileList.toArray(entryData);
-
-    }
-
-    private String[] getSecondZipArray(){
-        String[] travelData = new String[2];
-        travelData[0] = getExternalFilesDir(null).getPath() + "/" + ACCOUNT_TXT_FILENAME;
-        travelData[1] = getExternalFilesDir(null).getPath() + "/" + PATIENT_ZIP_FILENAME;
-        return travelData;
-    }
-
     private void submitFinishedReport() {
 
-        File entryFile = new File (getExternalFilesDir(null), PATIENT_TXT_FILENAME);
-        MakeTextFile patient = new MakeTextFile(entryFile,entryList, false);
-        patient.writeTextFile();
-
-        File zipFile1 = new File (getExternalFilesDir(null), PATIENT_ZIP_FILENAME);
-        Compress firstZip = new Compress(getFirstZipArray(),zipFile1.getPath());
-        firstZip.zip();
+        ArrayList<String> imageList = new ArrayList<String>();
+        for (int i=1; i < images.getCount()+1;i++ ) imageList.add(i,images.getItem(i-1).path);
 
         String USERNAME = getAccountData();
-        File accountFile = new File(getExternalFilesDir(null),ACCOUNT_TXT_FILENAME);
-        MakeTextFile account = new MakeTextFile(accountFile,accountList, false);
-        account.writeTextFile();
 
-        Time today = new Time(Time.getCurrentTimezone());
-        today.setToNow();
-        File zipFile2 = new File (getExternalFilesDir("ZipFiles"), today.format("%m%d%Y_%H%M%S")+"_"+ USERNAME + ".zip");
-        Compress secondZip = new Compress(getSecondZipArray(),zipFile2.getPath());
-        secondZip.zip();
+        AssembleData assembleData = new AssembleData(getApplicationContext(),entryList,imageList,accountList,USERNAME);
+        assembleData.start();
 
-        File queueLog = new File (getExternalFilesDir("queueLog"), "queueLog.txt");
-        MakeTextFile queueFile = new MakeTextFile(queueLog, entryLog,true);
-        queueFile.writeTextFile();
-
-        onDestroy();
-    }
-
-    public void onDestroy() {
-        super.onDestroy();
         finish();
     }
 }

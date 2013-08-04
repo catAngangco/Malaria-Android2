@@ -35,7 +35,6 @@ public class MakeTextFile {
         Log.v("write","text");
         try {
             OutputStream os = new FileOutputStream(file,append);
-            String metaData = "";
 
             os.write(combineData().getBytes());
             os.close();

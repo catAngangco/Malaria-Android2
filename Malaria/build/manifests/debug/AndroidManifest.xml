@@ -20,9 +20,9 @@
         </activity>
         <activity android:label="@string/title_activity_fullscreen_photo" android:name="com.cajama.malaria.newreport.FullscreenPhotoActivity">
         </activity>
-        <activity android:label="@string/title_activity_queue_log" android:name="com.cajama.malaria.QueueLogActivity">
+        <activity android:label="@string/title_activity_queue_log" android:name="com.cajama.malaria.entryLogs.QueueLogActivity">
         </activity>
-        <activity android:label="@string/title_activity_sent_log" android:name="com.cajama.malaria.SentLogActivity">
+        <activity android:label="@string/title_activity_sent_log" android:name="com.cajama.malaria.entryLogs.SentLogActivity">
         </activity>
     </application>
 
