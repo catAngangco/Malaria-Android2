@@ -14,12 +14,12 @@ import javax.crypto.Cipher;
  */
 public class RSA {
     static final String TAG = "AsymmetricAlgorithmRSA";
-    int bitSize = 128;
+    int bitSize = 1024;
     Key publicKey = null;
     Key privateKey = null;
 
     public RSA(){
-        // Generate key pair for 128-bit RSA encryption and decryption
+        // Generate key pair for 1024-bit RSA encryption and decryption
         try {
             KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
             kpg.initialize(bitSize);
@@ -31,13 +31,13 @@ public class RSA {
         }
     }
 
-    public String encryptRSA(String clearText){
+    public String encryptRSA(byte[] clearText){
         // Encode the original data with RSA private key
         byte[] encodedBytes = null;
         try {
             Cipher c = Cipher.getInstance("RSA");
             c.init(Cipher.ENCRYPT_MODE, privateKey);
-            encodedBytes = c.doFinal(clearText.getBytes());
+            encodedBytes = c.doFinal(clearText);
         } catch (Exception e) {
             Log.e(TAG, "RSA encryption error");
         }
@@ -47,15 +47,17 @@ public class RSA {
 
     public String decryptRSA(String cipherText){
         // Decode the encoded data with RSA public key
-        byte[] decodedBytes = null;
+        byte[] decodedBytes;
         try {
             Cipher c = Cipher.getInstance("RSA");
             c.init(Cipher.DECRYPT_MODE, publicKey);
             decodedBytes = c.doFinal(cipherText.getBytes());
+            Log.v(TAG,"4");
+            return new String(decodedBytes);
         } catch (Exception e) {
-            Log.e(TAG, "RSA decryption error");
+            Log.e(TAG, "RSA decryption error" + e);
         }
 
-        return Base64.encodeToString(decodedBytes, Base64.DEFAULT);
+        return "Decryption not completed";
     }
 }

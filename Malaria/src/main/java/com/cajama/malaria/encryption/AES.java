@@ -23,14 +23,20 @@ public class AES {
     }
 
     public void encryptAES(File clearTextFile, File cipherTextFile){
+        Log.v(TAG,"Start encryption");
+
+
+
         try{
             Cipher cipher = Cipher.getInstance("AES");
+            Log.v(TAG,"New cipher" + sk);
             cipher.init(Cipher.ENCRYPT_MODE,sk);
+            Log.v(TAG,"Cipher created");
 
             FileInputStream fis = new FileInputStream(clearTextFile);
             FileOutputStream fos = new FileOutputStream(cipherTextFile);
             CipherOutputStream cos = new CipherOutputStream(fos,cipher);
-
+            Log.v(TAG,"Streams created");
             byte[] block = new byte[8];
             while ((size = fis.read(block)) != -1) {
                 cos.write(block, 0, size);

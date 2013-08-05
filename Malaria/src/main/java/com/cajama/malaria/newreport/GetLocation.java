@@ -28,8 +28,10 @@ public class GetLocation implements LocationListener {
     }
 
     public void onLocationChanged(Location location) {
-        double lat = location.getLatitude();
-        double lng = location.getLongitude();
+       // double lat = location.getLatitude();
+       // double lng = location.getLongitude();
+        double lat = 14.6429007;
+        double lng = 121.0912867;
         latitude = String.valueOf(lat);
         longitude = String.valueOf(lng);
     }

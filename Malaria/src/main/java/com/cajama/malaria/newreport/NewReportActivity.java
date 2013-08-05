@@ -387,7 +387,7 @@ public class NewReportActivity extends SherlockActivity{
     private void submitFinishedReport() {
 
         ArrayList<String> imageList = new ArrayList<String>();
-        for (int i=1; i < images.getCount()+1;i++ ) imageList.add(i,images.getItem(i-1).path);
+        for (int i=0; i < images.getCount();i++ ) imageList.add(i,images.getItem(i).path);
 
         String USERNAME = getAccountData();
 

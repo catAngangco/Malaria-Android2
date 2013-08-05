@@ -8,7 +8,9 @@ import com.cajama.malaria.encryption.AES;
 import com.cajama.malaria.encryption.RSA;
 
 import java.io.File;
+import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -49,7 +51,7 @@ public class AssembleData {
     private String[] getSecondZipArray(){
         String[] travelData = new String[2];
         travelData[0] = c.getExternalFilesDir(null).getPath() + "/" + ACCOUNT_TXT_FILENAME;
-        travelData[1] = c.getExternalFilesDir(null).getPath() + "/" + PATIENT_ZIP_FILENAME;
+        travelData[1] = c.getExternalFilesDir(null).getPath() + "/" + AES_FILENAME;
         return travelData;
     }
     public void start(){
@@ -64,23 +66,36 @@ public class AssembleData {
         Compress firstZip = new Compress(getFirstZipArray(),zipFile1.getPath());
         firstZip.zip();
 
-        //AES encrypt patient zip file
-        byte[] skByte = accountData.get(1).getBytes();
-        SecretKeySpec secretKey = new SecretKeySpec(skByte, "AES");
-        AES aes = new AES(secretKey);
-        File AESFile = new File(c.getExternalFilesDir(null),AES_FILENAME);
-        aes.encryptAES(zipFile1,AESFile);
+        //hash secret key
+        try {
+            byte[] skByte = accountData.get(1).getBytes("UTF-8");
+            MessageDigest sha = MessageDigest.getInstance("SHA-1");
+            skByte = sha.digest(skByte);
+            skByte = Arrays.copyOf(skByte, 16); // use only first 128 bit
+            SecretKeySpec secretKey = new SecretKeySpec(skByte, "AES");
 
-        //decryption test
-        File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
-        aes.decryptAES(AESFile,test);
+            //AES encrypt patient zip file
+            AES aes = new AES(secretKey);
+            File AESFile = new File(c.getExternalFilesDir(null),AES_FILENAME);
+            aes.encryptAES(zipFile1,AESFile);
 
-        //RSA encrypt private key
-        RSA rsa = new RSA();
-        accountData.set(1, rsa.encryptRSA(accountData.get(1)));
+            //decryption test
+            File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
+            aes.decryptAES(AESFile,test);
 
-        //RSA decryption test
-        accountData.add(rsa.decryptRSA(accountData.get(1)));
+            //RSA encrypt private key
+            RSA rsa = new RSA();
+            accountData.set(1, rsa.encryptRSA(skByte));
+
+
+            //RSA decryption test
+            //accountData.add(rsa.decryptRSA(accountData.get(1)));
+        } catch (Exception e){
+            Log.v("Encryption","exception" + e);
+        }
+
+
+
 
         //create private key text file
         File accountFile = new File(c.getExternalFilesDir(null),ACCOUNT_TXT_FILENAME);
