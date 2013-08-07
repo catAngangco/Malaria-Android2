@@ -8,6 +8,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_gravity="left"
             android:id="@+id/label"/>
 
     <TextView
@@ -15,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:layout_gravity="right"
             android:id="@+id/value"/>
 
 </LinearLayout><!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/layout/summary_row.xml -->

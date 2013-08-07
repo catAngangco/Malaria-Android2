@@ -2,11 +2,17 @@ package com.cajama.malaria.newreport;
 
 import android.util.Log;
 
+import com.jamesmurty.utils.XMLBuilder;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Properties;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 /**
  * Created by GMGA on 7/28/13.
@@ -24,10 +30,59 @@ public class MakeTextFile {
 
     private String combineData(){
         String content="";
-        for(String data : contentArray){
-            content+= data + "\n";
-            Log.v("WRITE","CONTENT: " + data);
+        XMLBuilder builder = null;
+        int index = 0;
+        String[] tags;
+
+        boolean isEntry = contentArray.size() != 2;
+
+        if (isEntry) {
+            tags = new String[]{
+                    "date-created",
+                    "time-created",
+                    "latitude",
+                    "longitude",
+                    "first-name",
+                    "middle-name",
+                    "last-name",
+                    "birthday",
+                    "sex",
+                    "slide-number",
+                    "case",
+                    "species",
+                    "drugs-given",
+                    "exam-result",
+                    "remarks"
+            };
+        } else {
+            tags = new String[] {
+                    "user",
+                    "pass"
+            };
         }
+
+        try {
+            if (isEntry) builder = XMLBuilder.create("entry");
+            else builder = XMLBuilder.create("credentials");
+            for(String data : contentArray){
+                builder.element(tags[index++]).text(data);
+                Log.v("WRITE","CONTENT: " + data);
+            }
+
+            Properties outputProperties = new Properties();
+            outputProperties.put(javax.xml.transform.OutputKeys.METHOD, "xml");
+            outputProperties.put(javax.xml.transform.OutputKeys.INDENT, "yes");
+            outputProperties.put("{http://xml.apache.org/xslt}indent-amount", "2");
+            outputProperties.put(javax.xml.transform.OutputKeys.OMIT_XML_DECLARATION, "yes");
+
+            content = builder.asString(outputProperties);
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+
         return content;
     }
 

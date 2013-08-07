@@ -90,7 +90,7 @@ public class AssembleData {
             accountData.set(1, rsa.encryptRSA(skByte));
 
             //RSA decryption test
-            accountData.add(rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
+            //accountData.add(rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
         } catch (Exception e){
             Log.v("Encryption","exception" + e);
         }
