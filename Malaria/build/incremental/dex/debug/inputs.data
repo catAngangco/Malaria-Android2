@@ -1,60 +1,74 @@
 # incremental data. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1375640114000 2293 f13ada0f6870af78560f1317835d1c4e585a7585 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/ImageAdapter.class
-1375035617000 1025 c91047740a83afbd01abd75820d65785742185d1 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/FullscreenPhotoActivity$1.class
-1375086389000 1334 03d8d0815435574fce3b8aab5bda8b28c0019ba0 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/SentLogActivity.class
-1375003588000 938 f530480e90119cd89b42b083e769ca7324274d05 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$color.class
-1375003588000 436 28eb049b28ef21af192c8013963cfbe6198ce296 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$array.class
-1375003588000 872 4f0bdd689546a8a5dab61441154706db8471ad44 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/android/customviews/DateDisplayPicker$1.class
-1375084768000 3872 d87cfa038f30ff69f3d711fa5aae60090766cae2 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/FullscreenPhotoActivity.class
-1375640114000 387 726728598c6951745bad3d17ca05e8f37ff97ac6 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/myBitmap.class
-1375035617000 1521 58f4214569e65789b4626823efa849e9b0b88460 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$layout.class
-1375086389000 2753 ee48d26856e0aa19ad34acd61643fe8829ac7916 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/entryAdapter.class
-1375003588000 1133 b0b544d6bac0bbef74421722621c27fd927c0d8f /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$string.class
-1375086389000 1555 785709fb11df5c4af9509bdd30f3c146eb2e00a5 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/MainActivity.class
-1375086389000 945 02f494fb1585ab134ec6cf22277bb34c34f4f5e1 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/entryAdapter$ViewHolder.class
-1375003588000 947 74d4049b05f65b86bc540bd4fcc36072b84948bb /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$color.class
-1375003588000 5853 4a3de40b171ae496bd8007a904f214781bb27602 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$style.class
-1375003588000 4629 22c3febaf6bf9481bcd161d474f4447ed8daa0a9 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$attr.class
-1375640114000 2131 9097abe1204a1105b3b572dfb2d719d35fa8616b /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/MakeTextFile.class
-1375003588000 10344 84a5b93902acbf33d8deb2b387e0a31e8eae5c10 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$styleable.class
-1375035617000 1541 ba0d6ef777a8902a6469eeae552b02b3d898366f /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/FullscreenPhotoActivity$2.class
-1375673523000 1447 16f55ace1b5fdd28c243e4ff1cebb43e1587d0e2 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity$5.class
-1375084768000 10335 86421dbd5b615f160454b6568aae564ea613559f /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$styleable.class
-1375006480000 2337 5c490ef8dbd228fbf254d41ef8a3989380b95a89 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/Compress.class
-1375003588000 741 a213616cd324bb9c4bac208cd11183322ade0770 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$bool.class
-1375042578000 1861 08fb61f06e4b4408b9bde5a9798f06a0929ed02c /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$layout.class
-1375006480000 1219 d6f9f6b6474df322873a0785dbeafbe7d059ed34 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/LoginActivity.class
-1374333067000 490914 3fe75433da602500cc71fcc1c46e5550291dd45d /Users/GMGA/Development/adt-bundle-mac-x86_64-20130522/sdk/extras/android/m2repository/com/android/support/support-v4/13.0.0/support-v4-13.0.0.jar
-1375673523000 1969 82b11321ea865cc2a5bfb73f9a100c55affdff46 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity$1.class
-1375680067000 2452 4044fea6022953a1554409d565f5c2ada98b7fc2 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/encryption/RSA.class
-1375681630000 13510 899c1be0cf9388bea579c6347c955977e34b30fd /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity.class
-1375673523000 1498 2cc4e7c7d263397646ffe11bbe32a1c43b3a47f1 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity$3.class
-1375084768000 2806 05a6c65050fc25d4c6c6b5965cb90bff60cf9404 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$string.class
-1375086389000 1897 6bcb58c3eff8ffa22eb749b1d5b7b39476d162ab /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/ReadTextFile.class
-1375003588000 2418 75314e4148f911c878876c47302ada0f85bbfcb7 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/android/customviews/DateDisplayPicker.class
-1375003588000 923 ea31b95a79d4965048174dfbe4dcd0c23c506bd3 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R.class
-1375003588000 425 18d8f04c6aa7971870dbbcf0a1d7b3e921ccb09f /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$integer.class
-1375003588000 12814 074bcfb10fe80519622b98f6ac3a599d514e7f03 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$drawable.class
-1375003588000 1208 ae3770ddbb85e5178cfee28c97bb79132b62edb6 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$dimen.class
-1375003588000 872 c571352092eb045dfe7dc727d7b1fbc5a306e4b8 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R.class
-1375042578000 416 feb591d14553339d8c788cc1a93b0060ef2e3f85 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$integer.class
-1375003588000 1297 39a102079f71a66101cb87f9c085c1aa4d7de491 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$dimen.class
-1375042578000 586 8330c0f7374d65e0beb11d75b966085eebadf914 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$menu.class
-1375003588000 1033 cfad33f43b64dd566839e653a089f232c227c592 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/android/customviews/SquareImageView.class
-1375673523000 938 a10af2167e8397d805650329da0e2279cf95d821 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity$4.class
-1375070641000 4494 a569eb990f1b2248c1af2851ae8ee7b0ec89c620 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$id.class
-1375003588000 4620 9f77bf12bfb70ca6047de9540b44da2d2b648bcf /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$attr.class
-1375003588000 2392 ab6c663d002ae7a91e1ab81b49944027926c27ee /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$id.class
-1375003588000 6627 a97737c545a7eed422a6c8db68321f4fb27e786d /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/actionbarsherlock/R$drawable.class
-1375084768000 5954 5e810603bf34123271c83be9ee22cfe0e892dd14 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$style.class
-1375673523000 989 d2cf8216c3be143b80146835aa983211bea72cd4 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/NewReportActivity$2.class
-1375003588000 732 3eb58918f6b7127d42bd42c9280689e75fedd8a0 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/R$bool.class
-1375003558000 440114 0c8f82194692d70d6eee5d631e3850ddc252b7cf /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/classes.jar
-1375678897000 2636 c08e5b83eadd577df2f6bc7bb8d34e4bb2894410 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/encryption/AES.class
-1375086389000 3439 8881b16252c95da4f0abcc22a9ca42fef0962a1a /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/QueueLogActivity.class
-1375681008000 4991 403160dc08da887c2a3b994d1db4fab47a8e1aa7 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/AssembleData.class
-1375086389000 245 ae0f34621707789ff9a47498be27f00fd0dba65b /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/entryLogs/entryAdapter$1.class
-1375677187000 2389 546f89d17ab4d5a083258c4f4e4996104726bd26 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/newreport/GetLocation.class
-1375003588000 345 24315050a510e57ed2ad8750bd3caeaf0314e6ec /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/classes/debug/com/cajama/malaria/BuildConfig.class
+1375809871522 287 87611df9a342f0130f20fcc7070b59cd461646f4 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\SendFileAsyncTask$OnAsyncResult.class
+1375809871614 2056 b9cd6faabf384eb1147529ef22c305cdb6efc26d C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\SendingService.class
+1375809872143 416 da006472973304e08c4dd0f51f9f517a2c11db9d C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$integer.class
+1375809871611 4101 ab6c9ae4a1e17d0dbd2120baabd5847c8822b825 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\SendingService$AsyncHttpPostTask.class
+1375805002424 3439 8881b16252c95da4f0abcc22a9ca42fef0962a1a C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\QueueLogActivity.class
+1375805002432 1334 03d8d0815435574fce3b8aab5bda8b28c0019ba0 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\SentLogActivity.class
+1375805002482 2293 f13ada0f6870af78560f1317835d1c4e585a7585 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\ImageAdapter.class
+1375805002153 872 4f0bdd689546a8a5dab61441154706db8471ad44 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\android\customviews\DateDisplayPicker$1.class
+1375805002568 947 74d4049b05f65b86bc540bd4fcc36072b84948bb C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$color.class
+1375809872148 586 655c71bab0298ea552b0801d5a00b9ebeae825d0 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$menu.class
+1375805002409 245 ae0f34621707789ff9a47498be27f00fd0dba65b C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\entryAdapter$1.class
+1375809871605 5900 c8544a7b0b5082dadaad6a29e6f7e330fb5e32a7 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\SendingService$AsyncPostStringTask.class
+1375809872008 13545 c5ed607ee10c7266e8827591ad16d3655181f821 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity.class
+1375805002590 5853 4a3de40b171ae496bd8007a904f214781bb27602 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$style.class
+1375805002542 1498 2cc4e7c7d263397646ffe11bbe32a1c43b3a47f1 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity$3.class
+1375809871819 3872 c738688c82dce3364a2a78ae7f42bac8bd8c3bd7 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\FullscreenPhotoActivity.class
+1374764155221 490914 3fe75433da602500cc71fcc1c46e5550291dd45d C:\Users\Jasper\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\13.0.0\support-v4-13.0.0.jar
+1375809871529 4735 bded5c52718f4dcb964baf352f909a621e486774 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\SendFileAsyncTask.class
+1375809872165 927 ac363dcd8ad6f3b5a437aabb6e0978a675df93bf C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R.class
+1375809872163 10335 ed5fbca2b795d2c6ce988264d6a5525cec638cd6 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$styleable.class
+1375809872146 1889 d3ec788e931b860a6e81fbd5a4a18fbe51508e8f C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$layout.class
+1375805002615 938 f530480e90119cd89b42b083e769ca7324274d05 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$color.class
+1375805002267 945 02f494fb1585ab134ec6cf22277bb34c34f4f5e1 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\entryAdapter$ViewHolder.class
+1375805002545 1447 16f55ace1b5fdd28c243e4ff1cebb43e1587d0e2 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity$5.class
+1375805002612 4620 9f77bf12bfb70ca6047de9540b44da2d2b648bcf C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$attr.class
+1375805002580 425 18d8f04c6aa7971870dbbcf0a1d7b3e921ccb09f C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$integer.class
+1375805002452 2337 5c490ef8dbd228fbf254d41ef8a3989380b95a89 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\Compress.class
+1375805002463 1025 c91047740a83afbd01abd75820d65785742185d1 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\FullscreenPhotoActivity$1.class
+1375809871542 1876 181e362f9885e4e5bb5620d0cdd0f210f454a9f6 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\MyBroadcastReceiver.class
+1375805002186 1555 785709fb11df5c4af9509bdd30f3c146eb2e00a5 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\MainActivity.class
+1375805002563 4629 22c3febaf6bf9481bcd161d474f4447ed8daa0a9 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$attr.class
+1375805002610 436 28eb049b28ef21af192c8013963cfbe6198ce296 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$array.class
+1375805002617 1297 39a102079f71a66101cb87f9c085c1aa4d7de491 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$dimen.class
+1375805002538 1969 82b11321ea865cc2a5bfb73f9a100c55affdff46 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity$1.class
+1375805002638 345 24315050a510e57ed2ad8750bd3caeaf0314e6ec C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\BuildConfig.class
+1366366894000 433368 3bfeb9062b12d5b340445336790dbc14c59c2d79 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\libs\httpclient-4.2.5.jar
+1375805002578 2392 ab6c663d002ae7a91e1ab81b49944027926c27ee C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$id.class
+1375805002540 989 d2cf8216c3be143b80146835aa983211bea72cd4 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity$2.class
+1375805002156 2418 75314e4148f911c878876c47302ada0f85bbfcb7 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\android\customviews\DateDisplayPicker.class
+1375805002176 1033 cfad33f43b64dd566839e653a089f232c227c592 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\android\customviews\SquareImageView.class
+1375809872062 1521 03ed5a466c6af51f9f916f2fe3c688fc7b864a7a C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$layout.class
+1363770728000 227275 3b7f38df6de5dd8b500e602ae8c2dd5ee446f883 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\libs\httpcore-4.2.4.jar
+1375804979754 440075 73bc33a76005050fde43267af7b6e17de8723530 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\exploded-bundles\MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar\classes.jar
+1375809871475 1174 d46164e33c8756b289ef8b17ba073322818e1e22 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\FinalSendingService$1.class
+1375805002254 2636 c08e5b83eadd577df2f6bc7bb8d34e4bb2894410 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\encryption\AES.class
+1375805002614 732 3eb58918f6b7127d42bd42c9280689e75fedd8a0 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$bool.class
+1375805002414 2753 ee48d26856e0aa19ad34acd61643fe8829ac7916 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\entryAdapter.class
+1375805002543 938 a10af2167e8397d805650329da0e2279cf95d821 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\NewReportActivity$4.class
+1375807082686 3630 849dc40106e2f16bb13105bc2b9e86724707cb5a C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\MakeTextFile.class
+1375805002484 387 726728598c6951745bad3d17ca05e8f37ff97ac6 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\myBitmap.class
+1366366904000 26477 6efc2f9df23c2ac4d3b701a11cab9f9fa6a641d4 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\libs\httpmime-4.2.5.jar
+1375809872141 4563 b4680becb58f9673137e39d36b5e21cf2daae2b4 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$id.class
+1375805002261 2452 4044fea6022953a1554409d565f5c2ada98b7fc2 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\encryption\RSA.class
+1375805002467 1541 ba0d6ef777a8902a6469eeae552b02b3d898366f C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\FullscreenPhotoActivity$2.class
+1375805002488 1219 d6f9f6b6474df322873a0785dbeafbe7d059ed34 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\LoginActivity.class
+1375805002476 2389 546f89d17ab4d5a083258c4f4e4996104726bd26 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\GetLocation.class
+1375805002564 741 a213616cd324bb9c4bac208cd11183322ade0770 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$bool.class
+1375805002585 1133 b0b544d6bac0bbef74421722621c27fd927c0d8f C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$string.class
+1375799324122 9447 5f14951799047e7704231585c72b4c9d01d73228 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\libs\java-xmlbuilder-0.6.jar
+1375809872156 5954 f2bceac1b37e3e3c8eadd194b8844325cb290c2a C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$style.class
+1375809871638 2014 0221c3967876f4793af852887ce814697452c8da C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\ServicesDemo.class
+1375809872151 2891 765a4f310486d21690686022abb137505f925557 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$string.class
+1375805002595 10344 84a5b93902acbf33d8deb2b387e0a31e8eae5c10 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$styleable.class
+1375809871490 4306 dfa038207abfcbba85d1bb3f37b1b7d53991f2f9 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\FinalSendingService.class
+1375807145451 4991 bf164098c933025258de5d7238d87864a119de35 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\newreport\AssembleData.class
+1375809871557 2983 ffde7df78a4837cc82955d6983e730cec0a646c1 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\background\NotificationHelper.class
+1375805002576 6627 a97737c545a7eed422a6c8db68321f4fb27e786d C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$drawable.class
+1375805002620 12814 074bcfb10fe80519622b98f6ac3a599d514e7f03 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\R$drawable.class
+1375805002572 1208 ae3770ddbb85e5178cfee28c97bb79132b62edb6 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R$dimen.class
+1375805002428 1897 6bcb58c3eff8ffa22eb749b1d5b7b39476d162ab C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\cajama\malaria\entryLogs\ReadTextFile.class
+1375805002596 872 c571352092eb045dfe7dc727d7b1fbc5a306e4b8 C:\Users\Jasper\AndroidStudioProjects\Malaria-Android2\Malaria\build\classes\debug\com\actionbarsherlock\R.class

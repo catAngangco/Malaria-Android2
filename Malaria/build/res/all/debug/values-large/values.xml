@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values-large/styles.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values-large/styles.xml -->
     <style name="LoginFormContainer">
         <item name="android:layout_width">400dp</item>
         <item name="android:layout_height">wrap_content</item>

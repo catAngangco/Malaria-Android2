@@ -33,6 +33,7 @@ public class QueueLogActivity extends ListActivity {
             ListView lview = (ListView) findViewById(android.R.id.list);
             entryAdapter adapter = new entryAdapter(this, logSet);
             lview.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
         }
         catch (FileNotFoundException e){
             Log.w("ExternalStorage", "Error readingQueue " + queueLog, e);

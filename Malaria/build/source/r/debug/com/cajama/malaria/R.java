@@ -9,7 +9,7 @@ package com.cajama.malaria;
 
 public final class R {
     public static final class array {
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/strings.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/strings.xml 
          */
         public static final int gender_array=0x7f040000;
         public static final int species_array=0x7f040001;
@@ -162,7 +162,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int activityChooserViewStyle=0x7f01005f;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -680,10 +680,10 @@ containing a value of this type.
         public static final int windowSplitActionBar=0x7f01005d;
     }
     public static final class bool {
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w480dp/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w480dp/values.xml 
          */
         public static final int abs__action_bar_embed_tabs=0x7f050000;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-sw600dp/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-sw600dp/values.xml 
          */
         public static final int abs__action_bar_expanded_action_views_exclusive=0x7f050001;
         public static final int abs__config_actionMenuItemAllCaps=0x7f050002;
@@ -704,12 +704,12 @@ containing a value of this type.
         public static final int abs__primary_text_holo_light=0x7f060009;
     }
     public static final class dimen {
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-land/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-hdpi-1024x600/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-mdpi-1024x600/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-land-hdpi-1024x600/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-land-mdpi-1024x600/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-xlarge/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-land/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-hdpi-1024x600/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-mdpi-1024x600/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-land-hdpi-1024x600/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-large-land-mdpi-1024x600/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-xlarge/values.xml 
          */
         public static final int abs__action_bar_default_height=0x7f080000;
         public static final int abs__action_bar_icon_vertical_padding=0x7f080001;
@@ -726,8 +726,8 @@ containing a value of this type.
         public static final int abs__dropdownitem_text_padding_right=0x7f08000a;
         public static final int abs__search_view_preferred_width=0x7f08000b;
         public static final int abs__search_view_text_min_width=0x7f08000c;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/dimens.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values-sw720dp-land/dimens.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/dimens.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values-sw720dp-land/dimens.xml 
          */
         public static final int activity_horizontal_margin=0x7f08000d;
         public static final int activity_vertical_margin=0x7f08000e;
@@ -999,7 +999,7 @@ containing a value of this type.
         public static final int abs__action_bar_subtitle=0x7f070011;
         public static final int abs__action_bar_title=0x7f070010;
         public static final int abs__action_context_bar=0x7f070021;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
          */
         public static final int abs__action_menu_divider=0x7f07000a;
         public static final int abs__action_menu_presenter=0x7f07000b;
@@ -1035,14 +1035,16 @@ containing a value of this type.
         public static final int abs__textButton=0x7f070013;
         public static final int abs__title=0x7f07001b;
         public static final int abs__up=0x7f07000f;
-        public static final int action_delete_photo=0x7f070069;
-        public static final int action_next=0x7f07006d;
-        public static final int action_photo=0x7f07006c;
-        public static final int action_prev=0x7f07006b;
-        public static final int action_settings=0x7f07006a;
+        public static final int action_delete_photo=0x7f07006b;
+        public static final int action_next=0x7f07006f;
+        public static final int action_photo=0x7f07006e;
+        public static final int action_prev=0x7f07006d;
+        public static final int action_settings=0x7f07006c;
         public static final int button=0x7f070035;
         public static final int button2=0x7f07003a;
         public static final int button3=0x7f07003c;
+        public static final int buttonStart=0x7f070068;
+        public static final int buttonStop=0x7f070069;
         public static final int clientEditCreate_BirthDateDayPicker=0x7f070042;
         public static final int date=0x7f070065;
         public static final int diagnostic_notes=0x7f07004a;
@@ -1069,7 +1071,7 @@ containing a value of this type.
         public static final int normal=0x7f070000;
         public static final int notes=0x7f070049;
         public static final int password=0x7f070037;
-        public static final int scrollView=0x7f070068;
+        public static final int scrollView=0x7f07006a;
         public static final int second_flip=0x7f070044;
         public static final int showCustom=0x7f070007;
         public static final int showHome=0x7f070004;
@@ -1108,9 +1110,9 @@ containing a value of this type.
         public static final int wrap_content=0x7f070009;
     }
     public static final class integer {
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w360dp/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w500dp/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w600dp/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w360dp/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w500dp/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-w600dp/values.xml 
          */
         public static final int abs__max_action_buttons=0x7f090000;
     }
@@ -1144,9 +1146,10 @@ containing a value of this type.
         public static final int activity_queuelog=0x7f03001a;
         public static final int activity_sentlog=0x7f03001b;
         public static final int entry_row=0x7f03001c;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001d;
-        public static final int sherlock_spinner_item=0x7f03001e;
-        public static final int test=0x7f03001f;
+        public static final int main=0x7f03001d;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001e;
+        public static final int sherlock_spinner_item=0x7f03001f;
+        public static final int test=0x7f030020;
     }
     public static final class menu {
         public static final int fullscreen_photo=0x7f0c0000;
@@ -1171,7 +1174,7 @@ containing a value of this type.
         public static final int abs__searchview_description_voice=0x7f0a000a;
         public static final int abs__shareactionprovider_share_with=0x7f0a000b;
         public static final int abs__shareactionprovider_share_with_application=0x7f0a000c;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/strings.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/strings.xml 
          */
         public static final int action_settings=0x7f0a000d;
         public static final int add_new_photo=0x7f0a000e;
@@ -1203,45 +1206,47 @@ containing a value of this type.
         public static final int photo_delete_warning=0x7f0a0028;
         public static final int queued_entries=0x7f0a0029;
         public static final int sent_entries=0x7f0a002a;
-        public static final int slide_photos=0x7f0a002b;
-        public static final int submit=0x7f0a002c;
-        public static final int submit_new_report=0x7f0a002d;
-        public static final int summary=0x7f0a002e;
-        public static final int take_photo=0x7f0a002f;
-        public static final int time_created=0x7f0a0030;
-        public static final int time_sent=0x7f0a0031;
-        public static final int title_activity_fullscreen_photo=0x7f0a0032;
-        public static final int title_activity_log_in=0x7f0a0033;
-        public static final int title_activity_login=0x7f0a0034;
-        public static final int title_activity_new_report=0x7f0a0035;
-        public static final int title_activity_new_report_patient_details=0x7f0a0036;
-        public static final int title_activity_queue_log=0x7f0a0037;
-        public static final int title_activity_sent_log=0x7f0a0038;
-        public static final int treatment=0x7f0a0039;
-        public static final int warning=0x7f0a003a;
+        public static final int server_apk_address=0x7f0a002b;
+        public static final int server_send_address=0x7f0a002c;
+        public static final int slide_photos=0x7f0a002d;
+        public static final int submit=0x7f0a002e;
+        public static final int submit_new_report=0x7f0a002f;
+        public static final int summary=0x7f0a0030;
+        public static final int take_photo=0x7f0a0031;
+        public static final int time_created=0x7f0a0032;
+        public static final int time_sent=0x7f0a0033;
+        public static final int title_activity_fullscreen_photo=0x7f0a0034;
+        public static final int title_activity_log_in=0x7f0a0035;
+        public static final int title_activity_login=0x7f0a0036;
+        public static final int title_activity_new_report=0x7f0a0037;
+        public static final int title_activity_new_report_patient_details=0x7f0a0038;
+        public static final int title_activity_queue_log=0x7f0a0039;
+        public static final int title_activity_sent_log=0x7f0a003a;
+        public static final int treatment=0x7f0a003b;
+        public static final int warning=0x7f0a003c;
     }
     public static final class style {
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/styles.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/styles.xml 
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values-v11/styles.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values-v11/styles.xml 
  API 11 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b0000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b0001;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values-large/styles.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values-large/styles.xml 
          */
         public static final int LoginFormContainer=0x7f0b0002;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml 
          */
         public static final int Sherlock___TextAppearance_Small=0x7f0b0003;
-        /**  From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-v11/values.xml 
- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-v14/values.xml 
+        /**  From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-v11/values.xml 
+ From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values-v14/values.xml 
          */
         public static final int Sherlock___Theme=0x7f0b0004;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0b0005;

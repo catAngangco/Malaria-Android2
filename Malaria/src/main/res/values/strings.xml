@@ -52,7 +52,7 @@
     <string name="submit">Submit</string>
     <string name="summary">Summary</string>
 
-    <string name="entry_name">Entry Name</string>
+    <string name="username">Username</string>
     <string name="date_created">Date Created</string>
     <string name="time_created">Time Created</string>
     <string name="date_sent">Date Sent</string>
@@ -63,5 +63,8 @@
     <string name="title_activity_sent_log">Sent Entries</string>
 
     <string name="home">Home</string>
+
+    <string name="server_send_address">befreicafsan.pythonanywhere.com/api/send/</string>
+    <string name="server_apk_address">befreicafsan.pythonanywhere.com/api/apk/</string>
 
 </resources>

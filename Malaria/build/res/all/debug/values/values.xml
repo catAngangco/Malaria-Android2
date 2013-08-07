@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/strings.xml -->
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
@@ -13,7 +13,7 @@
         <item>Plasmodium malariae</item>
         <item>No Malaria</item>
     </string-array>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
     <attr name="background" format="reference|color" />
     <attr name="backgroundSplit" format="reference|color" />
     <attr name="divider" format="reference" />
@@ -493,10 +493,10 @@
     <dimen name="abs__dropdownitem_text_padding_right">8dip</dimen>
     <dimen name="abs__search_view_preferred_width">320dip</dimen>
     <dimen name="abs__search_view_text_min_width">160dip</dimen>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/dimens.xml -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
     <item name="abs__action_menu_divider" type="id"/>
     <item name="abs__action_menu_presenter" type="id"/>
     <item name="abs__home" type="id"/>
@@ -519,7 +519,7 @@
     <string name="abs__searchview_description_voice">Voice search</string>
     <string name="abs__shareactionprovider_share_with">Share with</string>
     <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g id="application_name" example="Bluetooth">%s</ns1:g></string>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/strings.xml -->
     <string name="action_settings">Settings</string>
     <string name="add_new_photo">Add New Photo</string>
     <string name="age">Age</string>
@@ -550,6 +550,8 @@
     <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
     <string name="queued_entries">Queued Entries</string>
     <string name="sent_entries">Sent Entries</string>
+    <string name="server_apk_address">befreicafsan.pythonanywhere.com/api/apk/</string>
+    <string name="server_send_address">befreicafsan.pythonanywhere.com/api/send/</string>
     <string name="slide_photos">Slide Photos</string>
     <string name="submit">Submit</string>
     <string name="submit_new_report">Submit New Report</string>
@@ -566,7 +568,7 @@
     <string name="title_activity_sent_log">Sent Entries</string>
     <string name="treatment">Treatment</string>
     <string name="warning">Warning</string>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
@@ -584,7 +586,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">16dp</item>
     </style>
-    <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Jasper/AndroidStudioProjects/Malaria-Android2/Malaria/build/exploded-bundles/MalariaAndroid2LibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
     <style name="Sherlock.__TextAppearance.Small" parent="Widget">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>

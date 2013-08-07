@@ -12,7 +12,6 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -23,8 +22,8 @@ public class AssembleData {
     String USERNAME;
     Context c;
 
-    private static final String PATIENT_TXT_FILENAME = "textData.txt";
-    private static final String ACCOUNT_TXT_FILENAME = "accountData.txt";
+    private static final String PATIENT_TXT_FILENAME = "textData.xml";
+    private static final String ACCOUNT_TXT_FILENAME = "accountData.xml";
     private static final String PATIENT_ZIP_FILENAME = "entryData.zip";
     private static final String AES_FILENAME = "cipherZipFile.zip";
 
