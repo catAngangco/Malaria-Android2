@@ -2,6 +2,10 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/src/main/res/values/strings.xml -->
+    <string-array name="case_array">
+        <item>Uncomplicated</item>
+        <item>Severe</item>
+    </string-array>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
@@ -11,7 +15,7 @@
         <item>Plasmodium vivax</item>
         <item>Plasmodium ovale</item>
         <item>Plasmodium malariae</item>
-        <item>No Malaria</item>
+        <item>None</item>
     </string-array>
     <!-- From: file:/Users/GMGA/Documents/Cat/4th%20Year/Malaria-Android/Malaria/build/exploded-bundles/MalariaAndroidLibrariesActionBarSherlockActionbarsherlockUnspecified.aar/res/values/values.xml -->
     <attr name="background" format="reference|color" />
@@ -527,29 +531,37 @@
     <string name="back">Back</string>
     <string name="birthday">Birthday</string>
     <string name="cancel">Cancel</string>
+    <string name="case_malaria">Case</string>
     <string name="date_created">Date Created</string>
     <string name="date_sent">Date Sent</string>
     <string name="delete">Delete</string>
     <string name="delete_photo">Delete Photo</string>
     <string name="diagnosis">Diagnosis</string>
+    <string name="drugs_given">Drugs given</string>
     <string name="empty_photos_message">Click the camera icon to add a new photo.</string>
     <string name="entry_name">Entry Name</string>
+    <string name="exam_result">Exam result</string>
     <string name="get_treatment">Get Treatment</string>
     <string name="given_name">Given Name</string>
     <string name="hello_world">Hello world!</string>
     <string name="home">Home</string>
     <string name="last_name">Last Name</string>
+    <string name="latitude">Latitude</string>
     <string name="login">Login</string>
+    <string name="longitude">Longitude</string>
     <string name="middle_name">Middle Name</string>
     <string name="new_entry">New Entry</string>
     <string name="new_report_cancel_warning">This report will be discarded. All progress including photos will be lost.</string>
     <string name="next">Next</string>
-    <string name="notes">Notes</string>
+    <string name="num_photos">No. of Photos</string>
     <string name="ok">OK</string>
     <string name="patient_details">Patient Details</string>
     <string name="photo_delete_warning">This photo will be deleted. This action is irreversible.</string>
     <string name="queued_entries">Queued Entries</string>
+    <string name="remarks">Remarks</string>
     <string name="sent_entries">Sent Entries</string>
+    <string name="sex">Sex</string>
+    <string name="slide_number">Slide Number</string>
     <string name="slide_photos">Slide Photos</string>
     <string name="submit">Submit</string>
     <string name="submit_new_report">Submit New Report</string>

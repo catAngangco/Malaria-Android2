@@ -405,7 +405,7 @@
 1374998632000 552 4001449b4cc2bd9e1799cf2c3b354eaf42d20f89 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/abs__ic_clear_search_api_holo_light.png
 1374998632000 401 56cfda50c8e13b5644ae37df6581591188370cc0 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/device_access_video.png
 1374998632000 209 4158820728707ebc6ee9ea5fe458a03ec9f209d8 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/abs__ab_bottom_transparent_dark_holo.9.png
-1375003571000 16847 00dce7a0612adabf7affe575bf517763cd3f7a8d /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/activity_new_report.xml
+1375858419000 7894 65ff574ac6925a29c7a5fdfefc7294c6f71083d5 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/activity_new_report.xml
 1374998632000 340 f52184f5ceaa3f50ef891d5ddbe2808974912e7e /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/content_select_all.png
 1374998632000 364 2e0a92b25c3c611e237c9f8b5084a2156d0b8fa8 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/hardware_computer.png
 1374998632000 1614 a164b903a016c97a6adc8f8de91808c2e759f1c5 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/social_group.png
@@ -461,7 +461,7 @@
 1374998632000 1068 4bdeacb464846089164ec30f5817b178d175db00 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-hdpi/device_access_ring_volume.png
 1374998632000 738 c4b60d313187bc6c20db9d8af342ad3882998ebd /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/content_backspace.png
 1374998632000 985 3ce2a14fe1d662fb9109f19fb8f0f6fa4d537d80 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-hdpi/content_new_attachment.png
-1375084761000 66125 31ed17738aba9fd88cf4a676971611135b6c80c5 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/values/values.xml
+1375862464000 66630 7a7a1c9a78cb70059414c8d4c7ebdca03fc16d61 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/values/values.xml
 1374998632000 1441 dcdc2e9137e6cf7d1a0bd170e75f31ff09945adf /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/social_cc_bcc.png
 1374998632000 549 dffae4cdafafeeb2b64ccdf18b98308be6f81b8d /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-hdpi/device_access_secure.png
 1375003571000 1240 17f0b8654940ad3a9990770433f99c59d77f9523 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable/abs__ic_menu_moreoverflow_holo_light.xml
@@ -552,7 +552,7 @@
 1374998632000 944 8565f8a4bc45fc8dfbab6ac7fbb2816373a8fa05 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/hardware_headset.png
 1374998632000 545 60dda65a1b21bf90afcaa82617b606f0b5a82002 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/abs__progress_primary_holo_dark.9.png
 1374998632000 1026 b25b01fac1900c24081e90364290f9c173528c69 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/location_map.png
-1375035513000 1058 0fd0dabae4814636730a663ba50e1b4c309e5bc1 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/entry_row.xml
+1375860692000 916 069fa86ceda641989aae1e82ed7471fa103f12c2 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/entry_row.xml
 1374998632000 675 b46cafb305b9ebaac24a8cea8ee9fd8264e2466c /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/av_download.png
 1374998632000 214 e3d50668295e63a0f3c2a81381af01f8031aee65 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-hdpi/abs__cab_background_top_holo_light.9.png
 1374998632000 786 17194d42b85306a913aa5bedc7e79d0dbba70dfd /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/collections_cloud.png
@@ -572,7 +572,7 @@
 1374998632000 894 45507f7698760e5d60b4bbdff384ac1d2dc371f9 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/social_group.png
 1374998632000 175 c2ad5706285810fedf4fd853e79bf1d92efe2834 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/abs__list_focused_holo.9.png
 1374998632000 182 0d0c923baf25a0a8864452cd177abd6865a72d58 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/abs__btn_cab_done_focused_holo_light.9.png
-1375035513000 2891 95dde82f1939ac59b2ae5f2c2ae49a5b81cbc4fa /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/test.xml
+1375810898000 2349 75efd6d96b4479b774b477fbfdd9bb56ef02a473 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/test.xml
 1374998632000 191 1194be8371586e47232c7219bbc13b0d72d66f94 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/av_stop.png
 1374998632000 488 9e1e28892f3e873aedc73923d8930ef3909dbb9a /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/images_crop.png
 1375003575000 351 fd7f28b87806a9dee43d55f305e89364f5f40676 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/menu/main.xml
@@ -609,6 +609,7 @@
 1374998632000 1183 8be394e06daa9f2f313ea00c4373d9294663934e /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/av_shuffle.png
 1374998632000 782 3128fc108af709195af9bc9ab9189f7cdcf8c760 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/device_access_mic_muted.png
 1374998632000 955 399d4c81f590a8171cf2e72c4076d822215f025c /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/social_share.png
+1375874252000 778 2c8d01b72c9f4d4240ca9099e0e7e4c46f71bf98 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/layout/summary_row.xml
 1374998632000 178 9a729c071080c03efdf8b0c2b36199e62851e1d0 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/abs__list_longpressed_holo.9.png
 1374998632000 180 ec90426c560a26fe8bc1abe35aa0caf284836273 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-xhdpi/abs__btn_cab_done_default_holo_dark.9.png
 1374998632000 752 b8f3e8a107a2f94e6295625a9b2b5742cf4cafc0 /Users/GMGA/Documents/Cat/4th Year/Malaria-Android/Malaria/build/res/all/debug/drawable-mdpi/device_access_new_account.png

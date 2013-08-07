@@ -14,11 +14,13 @@
     <string name="middle_name">Middle Name</string>
     <string name="last_name">Last Name</string>
     <string name="age">Age</string>
+    <string name="sex">Sex</string>
     <string name="take_photo">Take Photo</string>
-1                <string-array name="gender_array">
-        <item>Male</item>
-        <item>Female</item>
-    </string-array>
+    1                <string-array name="gender_array">
+    <item>Male</item>
+    <item>Female</item>
+</string-array>
+    <string name="slide_number">Slide Number</string>
 
     <string name="title_activity_new_report">Submit New Report</string>
     <string name="back">Back</string>
@@ -37,18 +39,28 @@
     <string name="patient_details">Patient Details</string>
     <string name="slide_photos">Slide Photos</string>
     <string name="diagnosis">Diagnosis</string>
+    <string name="num_photos">No. of Photos</string>
+    <string name="case_malaria">Case</string>
+    <string-array name="case_array">
+        <item>Uncomplicated</item>
+        <item>Severe</item>
+    </string-array>
 
     <string-array name="species_array">
         <item>Plasmodium falciparum</item>
         <item>Plasmodium vivax</item>
         <item>Plasmodium ovale</item>
         <item>Plasmodium malariae</item>
-        <item>No Malaria</item>
+        <item>None</item>
     </string-array>
 
-    <string name="notes">Notes</string>
+    <string name="drugs_given">Drugs given</string>
+    <string name="exam_result">Exam result</string>
     <string name="get_treatment">Get Treatment</string>
     <string name="treatment">Treatment</string>
+    <string name="remarks">Remarks</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
     <string name="submit">Submit</string>
     <string name="summary">Summary</string>
 

@@ -2,6 +2,7 @@ package com.cajama.malaria.newreport;
 
 import android.content.Context;
 import android.text.format.Time;
+import android.util.Base64;
 import android.util.Log;
 
 import com.cajama.malaria.encryption.AES;
@@ -11,6 +12,7 @@ import java.io.File;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -28,9 +30,9 @@ public class AssembleData {
     private static final String PATIENT_ZIP_FILENAME = "entryData.zip";
     private static final String AES_FILENAME = "cipherZipFile.zip";
 
-    public AssembleData(Context c,ArrayList<String> entryList,ArrayList<String> fileList, ArrayList<String> accountData, String USERNAME){
+    public AssembleData(Context c,ArrayList<String> entryList ,ArrayList<String> fileList, ArrayList<String> accountData, String USERNAME){
         this.c = c;
-        this.entryList = entryList;
+        this.entryList=entryList;
         this.fileList = fileList;
         this.accountData = accountData;
         this.USERNAME = USERNAME;
@@ -87,9 +89,8 @@ public class AssembleData {
             RSA rsa = new RSA();
             accountData.set(1, rsa.encryptRSA(skByte));
 
-
             //RSA decryption test
-            //accountData.add(rsa.decryptRSA(accountData.get(1)));
+            accountData.add(rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
         } catch (Exception e){
             Log.v("Encryption","exception" + e);
         }

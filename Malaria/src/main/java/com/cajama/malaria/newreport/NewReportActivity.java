@@ -17,6 +17,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -31,6 +33,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class NewReportActivity extends SherlockActivity{
     ViewFlipper VF;
@@ -42,6 +47,7 @@ public class NewReportActivity extends SherlockActivity{
     private String[] step_subtitles;
     ArrayList<String> entryList = new ArrayList<String>();
     ArrayList<String> accountList = new ArrayList<String>();
+    ArrayList<Map<String,String>> entries = new ArrayList<Map<String, String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,12 @@ public class NewReportActivity extends SherlockActivity{
                 R.array.species_array, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
+
+        Spinner spinner3 = (Spinner) findViewById(R.id.case_spinner);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                R.array.case_array, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner3.setAdapter(adapter3);
 
 
         VF = (ViewFlipper) findViewById(R.id.viewFlipper);
@@ -284,90 +296,133 @@ public class NewReportActivity extends SherlockActivity{
         }
     }
 
-    private void generateSummary() {
-        String fname, mname, lname, birthday, gender, diagnosisHuman, diagnosisNotes, photoCount, dateCreated, timeCreated, latitude,longitude;
+    private String checkEmpty(String value){
+        if (value.isEmpty()) value = "No input";
+        return value;
+    }
 
+    private HashMap<String,String> putEntry(String label,String value){
+        HashMap<String,String> line = new HashMap<String, String>();
+        line.put("label",label);
+        line.put("value",value);
+        return line;
+    }
+
+    private ArrayList<Map<String,String>> buildSummary(){
+        String fname, mname, lname, birthday, gender, diagnosisHuman, diagnosisNotes, photoCount, dateCreated, timeCreated, latitude,longitude;
+        String caseMalaria,slideNumber, drugsGiven, examResult;
         //date & time
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();
         //date
         dateCreated = today.format("%m/%d/%Y");
-        TextView textViewA = (TextView) findViewById(R.id.textViewA);
-        textViewA.setText(dateCreated);
+        entries.add(putEntry(getString(R.string.date_created), dateCreated));
         entryList.add(dateCreated);
         //time
         timeCreated = today.format("%H:%M:%S");
-        TextView textViewB = (TextView) findViewById(R.id.textViewB);
-        textViewB.setText(timeCreated);
+        entries.add(putEntry(getString(R.string.time_created),timeCreated));
         entryList.add(timeCreated);
 
         //latitude & longitude
         GetLocation getLoc = new GetLocation(this);
         //latitude
-        TextView textViewLat = (TextView) findViewById(R.id.textViewLat);
         latitude = getLoc.getLatitude();
-        textViewLat.setText(latitude);
+        entries.add(putEntry(getString(R.string.latitude),latitude));
         entryList.add(latitude);
         //longitude
-        TextView textViewLong = (TextView) findViewById(R.id.textViewLong);
         longitude = getLoc.getLongitude();
-        textViewLong.setText(longitude);
+        entries.add(putEntry(getString(R.string.longitude),longitude));
         entryList.add(longitude);
 
         //first name
         EditText editText1 = (EditText)findViewById(R.id.given_name_textfield);
-        TextView textView1 = (TextView)findViewById(R.id.textView1);
         fname = editText1.getText().toString();
-        textView1.setText(fname);
+        fname = checkEmpty(fname);
+        entries.add(putEntry(getString(R.string.given_name),fname));
         entryList.add(fname);
 
         //middle name
         EditText editText2=(EditText)findViewById(R.id.middle_name_textfield);
-        TextView textView2 =(TextView)findViewById(R.id.textView2);
         mname=editText2.getText().toString();
-        textView2.setText(mname);
+        mname = checkEmpty(mname);
+        entries.add(putEntry(getString(R.string.middle_name),mname));
         entryList.add(mname);
 
         //last name
         EditText editText3=(EditText)findViewById(R.id.last_name_textfield);
-        TextView textView3 =(TextView)findViewById(R.id.textView3);
         lname=editText3.getText().toString();
-        textView3.setText(lname);
+        lname = checkEmpty(lname);
+        entries.add(putEntry(getString(R.string.last_name),lname));
         entryList.add(lname);
 
         //birthday
         DateDisplayPicker dateDP=(DateDisplayPicker)findViewById(R.id.clientEditCreate_BirthDateDayPicker);
-        TextView textView4=(TextView)findViewById(R.id.textView4);
         birthday=dateDP.getText().toString();
-        textView4.setText(birthday);
+        birthday = checkEmpty(birthday);
+        entries.add(putEntry(getString(R.string.birthday),birthday));
         entryList.add(birthday);
 
         //sex
         Spinner spinner1=(Spinner)findViewById(R.id.gender_spinner);
-        TextView textView5 =(TextView)findViewById(R.id.textView5);
         gender=spinner1.getSelectedItem().toString();
-        textView5.setText(gender);
+        entries.add(putEntry(getString(R.string.sex),gender));
         entryList.add(gender);
+
+        //slide number
+        EditText editTextSlide = (EditText) findViewById(R.id.slide_number);
+        slideNumber = editTextSlide.getText().toString();
+        slideNumber = checkEmpty(slideNumber);
+        entries.add(putEntry(getString(R.string.slide_number),slideNumber));
+        entryList.add(slideNumber);
 
         //number of images
         GridView gridView1 = (GridView)findViewById(R.id.new_report_photos_layout);
-        TextView textView6 = (TextView)findViewById(R.id.textView6);
         photoCount = Integer.toString(gridView1.getCount());
-        textView6.setText(photoCount);
+        //entries.add(putEntry(getString(R.string.num_photos),photoCount));
+
+        //malaria case
+        Spinner spinner3=(Spinner)findViewById(R.id.case_spinner);
+        caseMalaria = spinner3.getSelectedItem().toString();
+        entries.add(putEntry(getString(R.string.case_malaria),caseMalaria));
+        entryList.add(caseMalaria);
 
         //malaria species
         Spinner spinner2=(Spinner)findViewById(R.id.species_spinner);
-        TextView textView7=(TextView) findViewById(R.id.textView7);
         diagnosisHuman=spinner2.getSelectedItem().toString();
-        textView7.setText(diagnosisHuman);
+        entries.add(putEntry(getString(R.string.diagnosis),diagnosisHuman));
         entryList.add(diagnosisHuman);
+
+        //drugs given
+        EditText editTextDrugs = (EditText)findViewById(R.id.drugs_given);
+        drugsGiven = editTextDrugs.getText().toString();
+        drugsGiven = checkEmpty(drugsGiven);
+        entries.add(putEntry(getString(R.string.drugs_given),drugsGiven));
+        entryList.add(drugsGiven);
+
+        //exam result
+        EditText editTextResult = (EditText)findViewById(R.id.exam_result);
+        examResult = editTextResult.getText().toString();
+        examResult = checkEmpty(examResult);
+        entries.add(putEntry(getString(R.string.exam_result),examResult));
+        entryList.add(examResult);
 
         //diagnostic notes
         EditText editText4=(EditText)findViewById(R.id.diagnostic_notes);
-        TextView textView8 =(TextView)findViewById(R.id.textView8);
         diagnosisNotes =editText4.getText().toString();
-        textView8.setText(diagnosisNotes);
+        diagnosisNotes = checkEmpty(diagnosisNotes);
+        entries.add(putEntry(getString(R.string.remarks),diagnosisNotes));
         entryList.add(diagnosisNotes);
+
+        return entries;
+    }
+
+    private void generateSummary() {
+        ArrayList<Map<String,String>> list = buildSummary();
+        String[] from = {"label","value"};
+        int[] to = {R.id.label, R.id.value};
+        ListView lView = (ListView) findViewById(R.id.summarylist);
+        SimpleAdapter adapter = new SimpleAdapter(this, list, R.layout.summary_row,from,to);
+        lView.setAdapter(adapter);
     }
 
     private String getAccountData(){

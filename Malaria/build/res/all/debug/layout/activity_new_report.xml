@@ -65,6 +65,16 @@
                     android:layout_weight="3"/>
         </LinearLayout>
 
+        <EditText
+                android:id="@+id/slide_number"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/slide_number"
+                />
+
     </LinearLayout>
 
     <RelativeLayout android:layout_width="fill_parent"
@@ -97,17 +107,12 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="30dp">
+            android:layout_height="fill_parent">
 
-
-        <TextView
-                android:layout_width="match_parent"
+        <Spinner
+                android:id="@+id/case_spinner"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/diagnosis"
-                android:textStyle="bold"
-                android:id="@+id/textView"
-                android:textSize="18dp"
                 android:layout_gravity="left"/>
 
         <Spinner
@@ -116,270 +121,37 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"/>
 
-        <TextView
-                android:id="@+id/notes"
-                android:layout_width="match_parent"
+        <EditText
+                android:id="@+id/drugs_given"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/notes"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:layout_gravity="left"/>
+                android:singleLine="true"
+                android:hint="@string/drugs_given"
+                android:inputType="text"
+                android:ems="10"/>
+
+        <EditText
+                android:id="@+id/exam_result"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/exam_result"
+                android:inputType="text"
+                android:ems="10"/>
 
         <EditText
                 android:id="@+id/diagnostic_notes"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:inputType="textImeMultiLine"
+                android:hint="@string/remarks"
                 android:ems="10"/>
     </LinearLayout>
 
-    <RelativeLayout android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/fourth_flip">
-        <TableLayout
-                android:layout_width="fill_parent"
-                android:padding="50px"
-                android:layout_height="fill_parent">
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Given Name:"
-                        android:textStyle="bold"
-                        android:paddingBottom="10px"
-                        android:id="@+id/textView"/>
-
-                <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Middle Name:"
-                        android:id="@+id/textView9"/>
-
-                <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Last Name:"
-                        android:id="@+id/textView10"/>
-
-                <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Birthday:"
-                        android:id="@+id/textView11"/>
-
-                <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sex:"
-                        android:id="@+id/textView12"/>
-
-                <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No. of Photos:"
-                        android:id="@+id/textView14"/>
-
-                <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Diagnosis:"
-                        android:id="@+id/textView15"/>
-
-                <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Notes:"
-                        android:id="@+id/textView16"/>
-
-                <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Date Created:"
-                        android:id="@+id/textViewa"/>
-
-                <TextView
-                        android:id="@+id/textViewA"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Time Created:"
-                        android:id="@+id/textViewb"/>
-
-                <TextView
-                        android:id="@+id/textViewB"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Latitude:"
-                        android:id="@+id/textViewlat"/>
-
-                <TextView
-                        android:id="@+id/textViewLat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Longitude:"
-                        android:id="@+id/textViewlong"/>
-
-                <TextView
-                        android:id="@+id/textViewLong"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_gravity="left"/>
-
-            </TableRow>
-
-        </TableLayout>
-    </RelativeLayout>
+    <ListView
+            android:id="@+id/summarylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     <RelativeLayout android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
