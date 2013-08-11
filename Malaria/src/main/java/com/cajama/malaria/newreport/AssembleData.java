@@ -25,8 +25,8 @@ public class AssembleData {
     String USERNAME;
     Context c;
 
-    private static final String PATIENT_TXT_FILENAME = "textData.txt";
-    private static final String ACCOUNT_TXT_FILENAME = "accountData.txt";
+    private static final String PATIENT_TXT_FILENAME = "textData.xml";
+    private static final String ACCOUNT_TXT_FILENAME = "accountData.xml";
     private static final String PATIENT_ZIP_FILENAME = "entryData.zip";
     private static final String AES_FILENAME = "cipherZipFile.zip";
 
@@ -86,7 +86,7 @@ public class AssembleData {
             aes.decryptAES(AESFile,test);
 
             //RSA encrypt private key
-            RSA rsa = new RSA();
+            RSA rsa = new RSA(1);
             accountData.set(1, rsa.encryptRSA(skByte));
 
             //RSA decryption test
@@ -94,9 +94,6 @@ public class AssembleData {
         } catch (Exception e){
             Log.v("Encryption","exception" + e);
         }
-
-
-
 
         //create private key text file
         File accountFile = new File(c.getExternalFilesDir(null),ACCOUNT_TXT_FILENAME);

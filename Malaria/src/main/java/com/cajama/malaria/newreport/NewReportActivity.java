@@ -420,8 +420,9 @@ public class NewReportActivity extends SherlockActivity{
         ArrayList<Map<String,String>> list = buildSummary();
         String[] from = {"label","value"};
         int[] to = {R.id.label, R.id.value};
-        ListView lView = (ListView) findViewById(R.id.summarylist);
-        summaryAdapter adapter = new summaryAdapter(this, list);
+        ListView lView = (ListView) findViewById(R.id.summaryLabels);
+        //summaryAdapter adapter = new summaryAdapter(this, list);
+        SimpleAdapter adapter = new SimpleAdapter(this,list,R.layout.summary_row, from, to);
         lView.setAdapter(adapter);
     }
 

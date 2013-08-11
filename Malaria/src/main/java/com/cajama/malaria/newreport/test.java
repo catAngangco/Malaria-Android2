@@ -29,7 +29,7 @@ public class test extends ListActivity {
 
             String[] from = {"label","value"};
             int [] to = {R.id.label, R.id.value};
-            ListView lview = (ListView) findViewById(R.id.summarylist);
+            //ListView lview = (ListView) findViewById(R.id.summary_l);
     }
 
 
