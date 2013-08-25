@@ -76,6 +76,8 @@ public class AssembleData {
             skByte = Arrays.copyOf(skByte, 16); // use only first 128 bit
             SecretKeySpec secretKey = new SecretKeySpec(skByte, "AES");
 
+            Log.v("SeckretKeybase64", Base64.encodeToString(skByte,Base64.DEFAULT));
+
             //AES encrypt patient zip file
             AES aes = new AES(secretKey);
             File AESFile = new File(c.getExternalFilesDir(null),AES_FILENAME);
