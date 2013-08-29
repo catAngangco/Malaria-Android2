@@ -1036,11 +1036,11 @@ containing a value of this type.
         public static final int abs__textButton=0x7f070013;
         public static final int abs__title=0x7f07001b;
         public static final int abs__up=0x7f07000f;
-        public static final int action_delete_photo=0x7f070059;
-        public static final int action_next=0x7f07005d;
-        public static final int action_photo=0x7f07005c;
-        public static final int action_prev=0x7f07005b;
-        public static final int action_settings=0x7f07005a;
+        public static final int action_delete_photo=0x7f07005a;
+        public static final int action_next=0x7f07005e;
+        public static final int action_photo=0x7f07005d;
+        public static final int action_prev=0x7f07005c;
+        public static final int action_settings=0x7f07005b;
         public static final int button=0x7f070035;
         public static final int button2=0x7f07003a;
         public static final int button3=0x7f07003c;
@@ -1080,6 +1080,7 @@ containing a value of this type.
         public static final int species_spinner=0x7f070049;
         public static final int summaryLabels=0x7f07004d;
         public static final int summaryValues=0x7f07004e;
+        public static final int tab=0x7f070058;
         public static final int tabMode=0x7f070002;
         public static final int tableLayout=0x7f070050;
         public static final int textView=0x7f070053;
@@ -1088,7 +1089,7 @@ containing a value of this type.
         public static final int time=0x7f070055;
         public static final int useLogo=0x7f070003;
         public static final int username=0x7f070036;
-        public static final int value=0x7f070058;
+        public static final int value=0x7f070059;
         public static final int viewFlipper=0x7f07003d;
         public static final int wrap_content=0x7f070009;
     }

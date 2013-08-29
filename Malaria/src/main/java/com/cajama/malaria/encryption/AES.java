@@ -37,10 +37,14 @@ public class AES {
             FileOutputStream fos = new FileOutputStream(cipherTextFile);
             CipherOutputStream cos = new CipherOutputStream(fos,cipher);
             Log.v(TAG,"Streams created");
-            byte[] block = new byte[8];
+            long startTime = System.currentTimeMillis();
+            byte[] block = new byte[65536];
             while ((size = fis.read(block)) != -1) {
                 cos.write(block, 0, size);
+                Log.v("AES","Size:"+String.valueOf(fis.available()));
             }
+            long difference = System.currentTimeMillis() - startTime;
+            Log.v("AES","Time" + String.valueOf(difference/1000));
             cos.close();
 
         } catch (Exception e){ Log.v(TAG,"AES encryption error");}

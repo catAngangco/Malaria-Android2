@@ -430,11 +430,11 @@ int id abs__submit_area 0x7f07002f
 int id abs__textButton 0x7f070013
 int id abs__title 0x7f07001b
 int id abs__up 0x7f07000f
-int id action_delete_photo 0x7f070059
-int id action_next 0x7f07005d
-int id action_photo 0x7f07005c
-int id action_prev 0x7f07005b
-int id action_settings 0x7f07005a
+int id action_delete_photo 0x7f07005a
+int id action_next 0x7f07005e
+int id action_photo 0x7f07005d
+int id action_prev 0x7f07005c
+int id action_settings 0x7f07005b
 int id button 0x7f070035
 int id button2 0x7f07003a
 int id button3 0x7f07003c
@@ -474,6 +474,7 @@ int id slide_number 0x7f070044
 int id species_spinner 0x7f070049
 int id summaryLabels 0x7f07004d
 int id summaryValues 0x7f07004e
+int id tab 0x7f070058
 int id tabMode 0x7f070002
 int id tableLayout 0x7f070050
 int id textView 0x7f070053
@@ -482,7 +483,7 @@ int id textView3 0x7f070052
 int id time 0x7f070055
 int id useLogo 0x7f070003
 int id username 0x7f070036
-int id value 0x7f070058
+int id value 0x7f070059
 int id viewFlipper 0x7f07003d
 int id wrap_content 0x7f070009
 int integer abs__max_action_buttons 0x7f090000

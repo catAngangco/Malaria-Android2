@@ -70,6 +70,7 @@ public class AssembleData {
 
         //hash secret key
         try {
+            Log.v("AES","Start AES");
             byte[] skByte = accountData.get(1).getBytes("UTF-8");
             MessageDigest sha = MessageDigest.getInstance("SHA-1");
             skByte = sha.digest(skByte);
@@ -79,17 +80,22 @@ public class AssembleData {
             Log.v("SeckretKeybase64", Base64.encodeToString(skByte,Base64.DEFAULT));
 
             //AES encrypt patient zip file
+            Log.v("AES","new AES");
             AES aes = new AES(secretKey);
             File AESFile = new File(c.getExternalFilesDir(null),AES_FILENAME);
             aes.encryptAES(zipFile1,AESFile);
-
+            Log.v("AES","end AES");
             //decryption test
-            File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
-            aes.decryptAES(AESFile,test);
+           // File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
+           // aes.decryptAES(AESFile,test);
 
             //RSA encrypt private key
+            Log.v("ENCRYPTION","Start RSA");
             RSA rsa = new RSA(1);
+            Log.v("ENCRYPTION","set RSA");
             accountData.set(1, rsa.encryptRSA(skByte));
+
+            Log.v("ENCRYPTION","End RSA");
 
             //RSA decryption test
             //accountData.add(rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
