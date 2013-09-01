@@ -3,43 +3,40 @@ package com.cajama.malaria.encryption;
 import android.util.Base64;
 import android.util.Log;
 
-import java.security.Key;
+import java.math.BigInteger;
 import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.security.SecureRandom;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.RSAPublicKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 
-/**
- * Created by GMGA on 8/5/13.
- */
+
 public class RSA {
     static final String TAG = "AsymmetricAlgorithmRSA";
     int bitSize = 1024;
     PublicKey publicKey = null;
     PrivateKey privateKey = null;
-
+    RSAPublicKey rsaPublicKey = null;
+    RSAPrivateKey rsaPrivateKey = null;
+    String message = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDrN/8c/33vLA93S9d1oXurrpN57Okl0lJuQO5i+g0qVJ/mffTEVp18ECu5ACA1tnM8VvSXYdg/xd2LwHxdVzm8IpUjEWbE4mgx+w5IN6GeSeOjcbigRetq3T2x6WWvlirdnCAyQQKMmfojjj/RP/7J5w9umHU0LiAqdYrjZhJH6wIDAQAB";
+    String modulus = "009b32240dca3fcdce3ed04018fc9c0c7758a3f2e2bef63a79f0fc4f4a418d605307a946d08a620273f6dca9bef7e2ef3351385a79a3c3812f99955854a1c4c221e7b7a7b584696541ad4d9b5bed84f9071dd933914f290cc77090f23c9165a095ba574fa39a6652a2cbcce27ad9927556dc300176689569d197b5dcbd0cd7afc9";
 
     GetPublicKeyTask.OnGetKeyResult onAsyncResult = new GetPublicKeyTask.OnGetKeyResult() {
         @Override
         public void onResult(int resultCode, String message) {
+            BigInteger mod = new BigInteger(message,16);
+            BigInteger exp = new BigInteger("10001",16);
+
             try {
-                byte[] byteKey = Base64.decode(message,Base64.DEFAULT);
-                X509EncodedKeySpec x = new X509EncodedKeySpec(byteKey);
-                publicKey = KeyFactory.getInstance("RSA").generatePublic(x);
-                //publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(message.getBytes()));
-            } catch (InvalidKeySpecException e) {
-                e.printStackTrace();
-            } catch (NoSuchAlgorithmException e) {
+                rsaPublicKey = (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(mod,exp));
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             Log.d(TAG, "public key = " + message);
@@ -64,42 +61,41 @@ public class RSA {
         }
     }
 
-    public RSA(int temp){
-        String message = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDrN/8c/33vLA93S9d1oXurrpN57Okl0lJuQO5i+g0qVJ/mffTEVp18ECu5ACA1tnM8VvSXYdg/xd2LwHxdVzm8IpUjEWbE4mgx+w5IN6GeSeOjcbigRetq3T2x6WWvlirdnCAyQQKMmfojjj/RP/7J5w9umHU0LiAqdYrjZhJH6wIDAQAB";
+    public RSA(byte[] bytePrivateKey){
+        //private key
         try {
-            byte[] byteKey = Base64.decode(message,Base64.DEFAULT);
-            X509EncodedKeySpec x = new X509EncodedKeySpec(byteKey);
-            publicKey = KeyFactory.getInstance("RSA").generatePublic(x);
-            //publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(message.getBytes()));
-        } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
+            PKCS8EncodedKeySpec p = new PKCS8EncodedKeySpec(bytePrivateKey);
+            KeyFactory kfv = KeyFactory.getInstance("RSA");
+            privateKey = kfv.generatePrivate(p);
+            //privateKey = KeyFactory.getInstance("RSA").generatePrivate(new PKCS8EncodedKeySpec(bytePrivateKey));
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
 
-    public RSA(String temp){
-        KeyPairGenerator kpg = null;
+        //public key
+
+        BigInteger mod = new BigInteger(modulus,16);
+        BigInteger exp = new BigInteger("10001",16);
+
         try {
-            kpg = KeyPairGenerator.getInstance("RSA");
-        } catch (NoSuchAlgorithmException e) {
+            rsaPublicKey = (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(mod,exp));
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        kpg.initialize(bitSize, new SecureRandom());
-        KeyPair kp = kpg.generateKeyPair();
-        publicKey = kp.getPublic();
-        privateKey = kp.getPrivate();
+
+        Log.v("ENCRYPTION","Public key 2:" + rsaPublicKey);
     }
 
     public String encryptRSA(byte[] clearText){
         // Encode the original data with RSA private key
         byte[] encodedBytes = null;
+        Cipher c = null;
         try {
-            Cipher c = Cipher.getInstance("RSA");
-            c.init(Cipher.ENCRYPT_MODE, publicKey);
+            c = Cipher.getInstance("RSA");
+            c.init(Cipher.ENCRYPT_MODE, rsaPublicKey);
             encodedBytes = c.doFinal(clearText);
         } catch (Exception e) {
-            Log.e(TAG, "RSA encryption error");
+            e.printStackTrace();
         }
         //return decryptRSA(encodedBytes);
         return Base64.encodeToString(encodedBytes,Base64.DEFAULT);

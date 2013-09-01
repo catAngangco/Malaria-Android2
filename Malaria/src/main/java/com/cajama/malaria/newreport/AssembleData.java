@@ -80,25 +80,27 @@ public class AssembleData {
             Log.v("SeckretKeybase64", Base64.encodeToString(skByte,Base64.DEFAULT));
 
             //AES encrypt patient zip file
-            Log.v("AES","new AES");
+            //Log.v("AES","new AES");
             AES aes = new AES(secretKey);
             File AESFile = new File(c.getExternalFilesDir(null),AES_FILENAME);
             aes.encryptAES(zipFile1,AESFile);
             Log.v("AES","end AES");
             //decryption test
-           // File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
-           // aes.decryptAES(AESFile,test);
+            File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
+            aes.decryptAES(AESFile,test);
 
             //RSA encrypt private key
             Log.v("ENCRYPTION","Start RSA");
-            RSA rsa = new RSA(1);
-            Log.v("ENCRYPTION","set RSA");
+            RSA rsa = new RSA();
+           // RSA rsa = new RSA(skByte);
+            //Log.v("ENCRYPTION","set RSA");
+            Log.v("ENCRYPTION", "Private key:" + Base64.encodeToString(skByte,Base64.DEFAULT));
             accountData.set(1, rsa.encryptRSA(skByte));
 
             Log.v("ENCRYPTION","End RSA");
 
             //RSA decryption test
-            //accountData.add(rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
+            //Log.v("ENCRYPTION", rsa.decryptRSA(Base64.decode(accountData.get(1),Base64.DEFAULT)));
         } catch (Exception e){
             Log.v("Encryption","exception" + e);
         }
