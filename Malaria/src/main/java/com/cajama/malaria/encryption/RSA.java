@@ -64,9 +64,6 @@ public class RSA {
     public RSA(byte[] bytePrivateKey){
         //private key
         try {
-            PKCS8EncodedKeySpec p = new PKCS8EncodedKeySpec(bytePrivateKey);
-            KeyFactory kfv = KeyFactory.getInstance("RSA");
-            privateKey = kfv.generatePrivate(p);
             //privateKey = KeyFactory.getInstance("RSA").generatePrivate(new PKCS8EncodedKeySpec(bytePrivateKey));
         } catch (Exception e) {
             e.printStackTrace();

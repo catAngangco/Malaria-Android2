@@ -191,7 +191,10 @@ public class NewReportActivity extends SherlockActivity{
             case R.id.action_photo:
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_slide.jpg";
+                String slideNum = "*";
+                EditText editTextSlide = (EditText) findViewById(R.id.slide_number);
+                slideNum = editTextSlide.getText().toString();
+                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/slide" + slideNum + "_" + timeStamp + ".jpg";
 
                 File imageFile = new File(imageFilePath);
                 Uri fileUri = Uri.fromFile(imageFile);
