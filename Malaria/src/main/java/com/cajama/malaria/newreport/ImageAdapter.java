@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.cajama.android.customviews.SquareImageView;
+import com.cajama.malaria.R;
 
 import java.util.Vector;
 

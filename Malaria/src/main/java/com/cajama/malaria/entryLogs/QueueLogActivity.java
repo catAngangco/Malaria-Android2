@@ -10,8 +10,9 @@ import android.widget.ListView;
 import com.cajama.malaria.R;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class QueueLogActivity extends ListActivity {
@@ -21,35 +22,48 @@ public class QueueLogActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_queuelog);
 
-        File queueLog = new File (getExternalFilesDir("queueLog"), "queueLog.txt");
-        ArrayList<String> logs;
-        ReadTextFile rtf = new ReadTextFile(queueLog);
+        File[] filesQueued = new File (String.valueOf(getExternalFilesDir("ZipFiles"))).listFiles();
 
-        try{
-            logs=rtf.readText();
+        Arrays.sort(filesQueued, new Comparator<File>() {
+            public int compare(File f1, File f2) {
+                return Long.valueOf(f1.lastModified()).compareTo(f2.lastModified());
+            }
+        });
+
+        try {
             ArrayList<HashMap> logSet = new ArrayList<HashMap>();
-            logSet=getLogSet(logs, logSet);
+            ArrayList<String[]> split = new ArrayList<String[]>();
+
+            for (File file : filesQueued) {
+                split.add(file.getName().split("_"));
+            }
+
+            logSet = getLogSet(split, logSet);
 
             ListView lview = (ListView) findViewById(android.R.id.list);
             entryAdapter adapter = new entryAdapter(this, logSet);
             lview.setAdapter(adapter);
         }
-        catch (FileNotFoundException e){
-            Log.w("ExternalStorage", "Error readingQueue " + queueLog, e);
+        catch (Exception e){
+            e.printStackTrace();
+            Log.d("Error", "blah");
         }
     }
 
-    private ArrayList<HashMap> getLogSet(ArrayList<String> logs, ArrayList<HashMap> logSet){
-        for(int i=0;i<logs.size();i=i+3){
+    private ArrayList<HashMap> getLogSet(ArrayList<String[]> split, ArrayList<HashMap> logSet){
+        for (int i=0; i<split.size(); i++) {
             HashMap map = new HashMap();
-            map.put("date", logs.get(i));
-            map.put("time", logs.get(i+1));
-            map.put("name", logs.get(i+2));
+            map.put("date", format(split.get(i)[0], "/"));
+            map.put("time", format(split.get(i)[1], ":"));
+            map.put("name", split.get(i)[2].replace(".zip", ""));
             logSet.add(map);
         }
         return logSet;
     }
-
+    
+    public String format(String str, String item) { // inserts / and : in date and time
+    	return str.substring(0, 2) + item + str.substring(2, 4) + item + str.substring(4, str.length());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

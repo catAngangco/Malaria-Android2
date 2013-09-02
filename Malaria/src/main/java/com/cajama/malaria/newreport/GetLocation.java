@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.cajama.malaria.R;
 
 /**
  * Created by GMGA on 7/28/13.

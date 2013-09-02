@@ -1,4 +1,4 @@
-package com.cajama.malaria.encryption;
+package com.cajama.background;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -18,18 +18,21 @@ import java.io.InputStreamReader;
 /**
  * Created by Jasper on 8/8/13.
  */
-public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
-    String url = "http://10.40.93.115/api/key";
-    String TAG = "GetPublicKeyTask";
-    OnGetKeyResult onAsyncResult;
+public class SyncDBAsyncTask extends AsyncTask<String, Void, String> {
+    String url;
+    String TAG = "TestDBAsyncTask";
+    OnAsyncResult onAsyncResult;
+    
+    public SyncDBAsyncTask(String url) {
+    	this.url = url;
+    }
 
-    public void setOnResultListener(OnGetKeyResult onAsyncResult) {
+    public void setOnResultListener(OnAsyncResult onAsyncResult) {
         if (onAsyncResult != null) this.onAsyncResult = onAsyncResult;
     }
 
     @Override
     protected String doInBackground(String... strings) {
-    	Log.d(TAG, String.valueOf(R.string.server_send_address));
         HttpGet get = null;
         HttpClient client = null;
 
@@ -49,7 +52,8 @@ public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
 
                 br = new BufferedReader(new InputStreamReader(is));
                 while ((line = br.readLine()) != null) {
-                    sb.append(line);
+                    sb.append(line+"\n");
+                    Log.d(TAG, "!!!!!");
                 }
 
             } catch (IOException e) {
@@ -78,7 +82,7 @@ public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
         return null;
     }
 
-    public interface OnGetKeyResult {
+    public interface OnAsyncResult {
         public abstract void onResult(int resultCode, String message);
     }
 }

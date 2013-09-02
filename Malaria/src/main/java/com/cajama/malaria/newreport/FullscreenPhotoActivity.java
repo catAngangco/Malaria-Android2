@@ -43,8 +43,8 @@ public class FullscreenPhotoActivity extends SherlockActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_delete_photo:
+    	int id = item.getItemId();
+            if (id == R.id.action_delete_photo) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                 alertDialogBuilder
                         .setTitle(R.string.warning)
@@ -70,15 +70,17 @@ public class FullscreenPhotoActivity extends SherlockActivity {
                 alertDialog.show();
 
                 return true;
-            case android.R.id.home:
+            }
+            else if (id == android.R.id.home) {
                 Intent resultIntent = new Intent(getApplicationContext(), NewReportActivity.class);
                 resultIntent.putExtra("pos", -1);
                 resultIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 setResult(RESULT_OK, resultIntent);
                 finish();
-            default:
                 return super.onOptionsItemSelected(item);
-        }
+            }
+            else 
+                return super.onOptionsItemSelected(item);
     }
     
 }

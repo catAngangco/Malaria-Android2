@@ -2,6 +2,7 @@ package com.cajama.malaria.newreport;
 
 import android.util.Log;
 
+import com.cajama.malaria.R;
 import com.jamesmurty.utils.XMLBuilder;
 
 import java.io.File;
@@ -64,6 +65,7 @@ public class MakeTextFile {
         try {
             if (isEntry) builder = XMLBuilder.create("entry");
             else builder = XMLBuilder.create("credentials");
+            Log.d("MakeTextFile", String.valueOf(contentArray.size()));
             for(String data : contentArray){
                 builder.element(tags[index++]).text(data);
                 Log.v("WRITE","CONTENT: " + data);

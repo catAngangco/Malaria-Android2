@@ -91,7 +91,7 @@ public class AssembleData {
 
             //RSA encrypt private key
             Log.v("ENCRYPTION","Start RSA");
-            RSA rsa = new RSA(1);
+            RSA rsa = new RSA(c);
             Log.v("ENCRYPTION","set RSA");
             accountData.set(1, rsa.encryptRSA(skByte));
 

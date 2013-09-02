@@ -6,17 +6,23 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.cajama.background.FinalSendingService;
+import com.cajama.background.SyncService;
 import com.cajama.malaria.entryLogs.QueueLogActivity;
 import com.cajama.malaria.entryLogs.SentLogActivity;
 import com.cajama.malaria.newreport.NewReportActivity;
 
 public class MainActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent startUpload = new Intent(this, FinalSendingService.class);
+        startService(startUpload);
+        Intent startSyncDB = new Intent(this, SyncService.class);
+        startService(startSyncDB);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

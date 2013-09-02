@@ -1,6 +1,7 @@
 package com.cajama.malaria.newreport;
 
 import android.util.Log;
+import com.cajama.malaria.R;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;

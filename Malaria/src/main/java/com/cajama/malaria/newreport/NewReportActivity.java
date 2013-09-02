@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -20,22 +22,25 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.cajama.android.customviews.DateDisplayPicker;
+import com.cajama.background.DataBaseHelper;
 import com.cajama.malaria.R;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import org.apache.http.message.BasicNameValuePair;
 
 public class NewReportActivity extends SherlockActivity{
     ViewFlipper VF;
@@ -109,25 +114,25 @@ public class NewReportActivity extends SherlockActivity{
 
         switch(displayedchild) {
             case 0: menu.findItem(R.id.action_prev).setTitle(R.string.cancel);
-                    menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setTitle(R.string.next);
-                    break;
+                menu.findItem(R.id.action_photo).setVisible(false);
+                menu.findItem(R.id.action_next).setTitle(R.string.next);
+                break;
             case 1: menu.findItem(R.id.action_prev).setTitle(R.string.back);
-                    menu.findItem(R.id.action_photo).setVisible(true);
-                    menu.findItem(R.id.action_next).setTitle(R.string.next);
-                    break;
+                menu.findItem(R.id.action_photo).setVisible(true);
+                menu.findItem(R.id.action_next).setTitle(R.string.next);
+                break;
             case 2: menu.findItem(R.id.action_prev).setTitle(R.string.back);
-                    menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setTitle(R.string.next);
-                    break;
+                menu.findItem(R.id.action_photo).setVisible(false);
+                menu.findItem(R.id.action_next).setTitle(R.string.next);
+                break;
             case 3: menu.findItem(R.id.action_prev).setTitle(R.string.back);
-                    menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setTitle(R.string.next);
-                    break;
+                menu.findItem(R.id.action_photo).setVisible(false);
+                menu.findItem(R.id.action_next).setTitle(R.string.next);
+                break;
             case 4: menu.findItem(R.id.action_prev).setTitle(R.string.back);
-                    menu.findItem(R.id.action_photo).setVisible(false);
-                    menu.findItem(R.id.action_next).setTitle(R.string.submit);
-                    break;
+                menu.findItem(R.id.action_photo).setVisible(false);
+                menu.findItem(R.id.action_next).setTitle(R.string.submit);
+                break;
             default: break;
         }
 
@@ -142,66 +147,69 @@ public class NewReportActivity extends SherlockActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_prev:
-                if (VF.getDisplayedChild() == 0) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                    alertDialogBuilder
-                            .setTitle(R.string.warning)
-                            .setMessage(R.string.new_report_cancel_warning)
-                            .setCancelable(false)
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
-                                    for (int c=0; c<images.getCount(); c++) {
-                                        File file = new File(images.getItem(c).path);
-                                        file.delete();
-                                    }
-
-                                    finish();
+    	int id = item.getItemId();
+        if (id == R.id.action_prev) {
+            if (VF.getDisplayedChild() == 0) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder
+                        .setTitle(R.string.warning)
+                        .setMessage(R.string.new_report_cancel_warning)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                for (int c=0; c<images.getCount(); c++) {
+                                    File file = new File(images.getItem(c).path);
+                                    file.delete();
                                 }
-                            })
-                            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
-                                    dialog.cancel();
-                                }
-                            });
 
-                    AlertDialog alertDialog = alertDialogBuilder.create();
+                                finish();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
 
-                    alertDialog.show();
-                } else {
-                    VF.showPrevious();
-                }
-                invalidateOptionsMenu();
-                return true;
-            case R.id.action_next:
-                //invalidateOptionsMenu();
-                if(VF.getDisplayedChild() == 2){
-                    generateSummary();
-                    VF.showNext();
-                }
-                else if(VF.getDisplayedChild() != VF.getChildCount()-1) {
-                    VF.showNext();
-                }
-                else if(VF.getDisplayedChild() == 4){
-                    submitFinishedReport();
-                }
-                invalidateOptionsMenu();
-                return true;
-            case R.id.action_photo:
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_slide.jpg";
+                AlertDialog alertDialog = alertDialogBuilder.create();
 
-                File imageFile = new File(imageFilePath);
-                Uri fileUri = Uri.fromFile(imageFile);
-                cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+                alertDialog.show();
+            } else {
+                VF.showPrevious();
+            }
+            invalidateOptionsMenu();
+            return true;
         }
+        if (id == R.id.action_next) {
+            //invalidateOptionsMenu();
+            if(VF.getDisplayedChild() == 2){
+                generateSummary();
+                VF.showNext();
+            }
+            else if(VF.getDisplayedChild() != VF.getChildCount()-1) {
+                VF.showNext();
+            }
+            else if(VF.getDisplayedChild() == 4){
+            	if (checkCredentials()) submitFinishedReport();
+            }
+            invalidateOptionsMenu();
+            return true;
+        }
+        if (id == R.id.action_photo) {
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_slide.jpg";
+
+            File imageFile = new File(imageFilePath);
+            Uri fileUri = Uri.fromFile(imageFile);
+            cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
+            startActivityForResult(cameraIntent, CAMERA_REQUEST);
+
+            return true;
+        }
+        else 
+            return super.onOptionsItemSelected(item);
+        
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -430,8 +438,8 @@ public class NewReportActivity extends SherlockActivity{
         String USERNAME, PASSWORD;
         EditText editText1=(EditText )findViewById(R.id.username);
         EditText editText2=(EditText )findViewById(R.id.password);
-        USERNAME           =editText1.getText().toString();
-        PASSWORD           =editText2.getText().toString();
+        USERNAME           =editText1.getText().toString().trim();
+        PASSWORD           =editText2.getText().toString().trim();
         Log.v("write","USERNAME: " + USERNAME + " PASSWORD: " + PASSWORD);
         accountList.add(USERNAME);
         accountList.add(PASSWORD);
@@ -450,6 +458,43 @@ public class NewReportActivity extends SherlockActivity{
         AssembleData assembleData = new AssembleData(getApplicationContext(),entryList,imageList,accountList,USERNAME);
         assembleData.start();
 
+        Log.d("asdasd", "finished!");
         finish();
+    }
+    
+    private boolean checkCredentials() {
+    	String USERNAME, PASSWORD;
+    	EditText editText1 = (EditText) findViewById(R.id.username);
+    	EditText editText2 = (EditText) findViewById(R.id.password);
+    	USERNAME           = editText1.getText().toString().trim();
+        PASSWORD           = editText2.getText().toString().trim();
+        DataBaseHelper helper = new DataBaseHelper(this);
+        
+        try {
+        	helper.createDataBase();
+        	helper.openDataBase();
+        	
+        	Cursor cursor = helper.getPair(USERNAME);
+        	if (cursor == null) {
+        		Toast.makeText(getApplicationContext(), "No such user exists!", Toast.LENGTH_LONG).show();
+        		return false;
+        	}
+        	
+        	cursor.moveToFirst();
+        	
+        	if (!cursor.getString(1).equals(PASSWORD)) {
+        		Toast.makeText(getApplicationContext(), "Unmatching username and password!", Toast.LENGTH_LONG).show();
+        		return false;
+        	}
+        	
+        	cursor.close();
+        	helper.close();
+        	return true;
+ 
+     	} catch (IOException ioe) {
+     		throw new Error("Unable to create database");
+     	} catch (SQLException sqle){
+     		throw sqle;
+     	}
     }
 }

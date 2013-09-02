@@ -1,6 +1,7 @@
 package com.cajama.malaria.entryLogs;
 
 import android.util.Log;
+import com.cajama.malaria.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,13 +26,12 @@ public class ReadTextFile{
             FileInputStream fis = new FileInputStream(file);
             BufferedReader br = new BufferedReader(new InputStreamReader(fis));
             String line;
-            Log.v("logs","enter");
 
-            while((line = br.readLine())!= null){
-                Log.v("logs",line);
+            while((line = br.readLine())!= null) {
                 logs.add(line);
             }
-
+            
+            Log.v("logs", "end readtextfile!");
             br.close();
             fis.close();
         } catch (IOException e){

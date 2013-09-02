@@ -2,17 +2,11 @@ package com.cajama.malaria.newreport;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.cajama.malaria.R;
-import com.cajama.malaria.newreport.summaryAdapter;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,9 +21,9 @@ public class test extends ListActivity {
 
         ArrayList<String> logs;
 
-            String[] from = {"label","value"};
-            int [] to = {R.id.label, R.id.value};
-            //ListView lview = (ListView) findViewById(R.id.summary_l);
+        String[] from = {"label","value"};
+        int [] to = {R.id.label, R.id.value};
+        //ListView lview = (ListView) findViewById(R.id.summary_l);
     }
 
 
