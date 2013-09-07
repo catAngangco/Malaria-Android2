@@ -86,8 +86,8 @@ public class AssembleData {
             aes.encryptAES(zipFile1,AESFile);
             Log.v("AES","end AES");
             //decryption test
-            File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
-            aes.decryptAES(AESFile,test);
+            /*File test = new File(c.getExternalFilesDir(null),"clearZip.zip");
+            aes.decryptAES(AESFile,test);*/
 
             //RSA encrypt private key
             Log.v("ENCRYPTION","Start RSA");

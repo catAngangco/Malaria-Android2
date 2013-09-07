@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -21,15 +22,20 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.cajama.android.customviews.DateDisplayPicker;
+import com.cajama.background.DataBaseHelper;
 import com.cajama.malaria.R;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,7 +49,11 @@ public class NewReportActivity extends SherlockActivity{
     ImageAdapter images;
     private static final int CAMERA_REQUEST = 1888;
     private static final int PHOTO_REQUEST = 4214;
+	private static final String TAG = "check creds";
+	private Uri fileUri;
     private String imageFilePath;
+    private int displayedchild;
+    private Resources res;
     private String[] step_subtitles;
     ArrayList<String> entryList = new ArrayList<String>();
     ArrayList<String> accountList = new ArrayList<String>();
@@ -83,16 +93,16 @@ public class NewReportActivity extends SherlockActivity{
 
         new_report_photos_layout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
-
+            	Intent intent = new Intent(getApplicationContext(), FullscreenPhotoActivity.class);
+                File imageFile = new File(images.getItem(position).path);
+                fileUri = Uri.fromFile(imageFile);
                 intent.putExtra("pos", position);
-                intent.putExtra("path", images.getItem(position).path);
-
+                intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
                 startActivityForResult(intent, PHOTO_REQUEST);
             }
         });
 
-        Resources res = getResources();
+        res = getResources();
         step_subtitles = new String[]{
                 res.getString(R.string.patient_details),
                 res.getString(R.string.slide_photos),
@@ -184,20 +194,17 @@ public class NewReportActivity extends SherlockActivity{
                     VF.showNext();
                 }
                 else if(VF.getDisplayedChild() == 4){
-                    submitFinishedReport();
+                    if (checkCredentials()) submitFinishedReport();
                 }
                 invalidateOptionsMenu();
                 return true;
             case R.id.action_photo:
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            	Intent cameraIntent = new Intent(this, Picture.class);
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                String slideNum = "*";
-                EditText editTextSlide = (EditText) findViewById(R.id.slide_number);
-                slideNum = editTextSlide.getText().toString();
-                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/slide" + slideNum + "_" + timeStamp + ".jpg";
+                imageFilePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) +  "/" + timeStamp + "_slide.jpg";
 
                 File imageFile = new File(imageFilePath);
-                Uri fileUri = Uri.fromFile(imageFile);
+                fileUri = Uri.fromFile(imageFile);
                 cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
 
@@ -239,17 +246,14 @@ public class NewReportActivity extends SherlockActivity{
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
-            BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
-            bmpFactoryOptions.inJustDecodeBounds = true;
-
-            bmpFactoryOptions.inSampleSize = calculateInSampleSize(bmpFactoryOptions, 100, 100);
-            bmpFactoryOptions.inJustDecodeBounds = false;
-
-            Bitmap bmp = BitmapFactory.decodeFile(imageFilePath, bmpFactoryOptions);
-
+        	String newimagepath = ((Uri) data.getParcelableExtra(android.provider.MediaStore.EXTRA_OUTPUT)).getPath();
+        	Bitmap bmp = null;
+        	while(bmp == null) {
+        		bmp = decodeSampledBitmapFromResource(newimagepath, 100,100);
+        	}
             myBitmap bmpp = new myBitmap();
             bmpp.image = bmp;
-            bmpp.path = imageFilePath;
+            bmpp.path = newimagepath;
 
             images.AddImage(bmpp);
             images.notifyDataSetChanged();
@@ -313,10 +317,12 @@ public class NewReportActivity extends SherlockActivity{
 
     private ArrayList<Map<String,String>> buildSummary(){
         String fname, mname, lname, birthday, gender, diagnosisHuman, diagnosisNotes, photoCount, dateCreated, timeCreated, latitude,longitude;
-        String caseMalaria,slideNumber, drugsGiven, examResult;
+        String caseMalaria,slideNumber, drugsGiven, examResult,age,address;
         //date & time
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();
+        entries.clear();
+        entryList.clear();
         //date
         dateCreated = today.format("%m/%d/%Y");
         entries.add(putEntry(getString(R.string.date_created), dateCreated));
@@ -365,11 +371,25 @@ public class NewReportActivity extends SherlockActivity{
         entries.add(putEntry(getString(R.string.birthday),birthday));
         entryList.add(birthday);
 
+        //age
+        EditText editAge=(EditText)findViewById(R.id.age_textfield);
+        age=editAge.getText().toString();
+        age = checkEmpty(age);
+        entries.add(putEntry(getString(R.string.age),age));
+        entryList.add(age);
+
         //sex
         Spinner spinner1=(Spinner)findViewById(R.id.gender_spinner);
         gender=spinner1.getSelectedItem().toString();
         entries.add(putEntry(getString(R.string.sex),gender));
         entryList.add(gender);
+
+        //address
+        EditText editAddress=(EditText)findViewById(R.id.address);
+        address=editAddress.getText().toString();
+        address = checkEmpty(address);
+        entries.add(putEntry(getString(R.string.address),address));
+        entryList.add(address);
 
         //slide number
         EditText editTextSlide = (EditText) findViewById(R.id.slide_number);
@@ -433,8 +453,8 @@ public class NewReportActivity extends SherlockActivity{
         String USERNAME, PASSWORD;
         EditText editText1=(EditText )findViewById(R.id.username);
         EditText editText2=(EditText )findViewById(R.id.password);
-        USERNAME           =editText1.getText().toString();
-        PASSWORD           =editText2.getText().toString();
+        USERNAME           =editText1.getText().toString().trim();
+        PASSWORD           =editText2.getText().toString().trim();
         Log.v("write","USERNAME: " + USERNAME + " PASSWORD: " + PASSWORD);
         accountList.add(USERNAME);
         accountList.add(PASSWORD);
@@ -455,4 +475,61 @@ public class NewReportActivity extends SherlockActivity{
 
         finish();
     }
+    
+    private boolean checkCredentials() {
+    	byte[] passBytes;
+    	String USERNAME, PASSWORD;
+    	
+    	DataBaseHelper helper = new DataBaseHelper(this);
+    	helper.openDataBase();
+    	
+        EditText editText1=(EditText )findViewById(R.id.username);
+        EditText editText2=(EditText )findViewById(R.id.password);
+        USERNAME           =editText1.getText().toString().trim();
+        PASSWORD           =editText2.getText().toString().trim();
+        
+        try {
+			passBytes = PASSWORD.getBytes("UTF-8");
+			MessageDigest sha = MessageDigest.getInstance("SHA-1");
+            passBytes = sha.digest(passBytes);
+            Log.d(TAG, USERNAME);
+            
+            Cursor cursor = helper.getPair(USERNAME);
+            
+        	if (cursor == null) {
+        		Toast.makeText(getApplicationContext(), "No existing user!", Toast.LENGTH_LONG).show();
+        		return false;
+        	}
+        	
+        	cursor.moveToFirst();
+        	Log.d(TAG, passBytes.toString());
+        	
+        	if (!cursor.getString(1).equals(PASSWORD)) {
+        		Toast.makeText(getApplicationContext(), "Unmatched username and password!", Toast.LENGTH_LONG).show();
+        		return false;
+        	}
+        	
+        	Log.d(TAG, "login success!");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+        
+    	return true;
+    }
+    
+    public static Bitmap decodeSampledBitmapFromResource(String filepath, int reqWidth, int reqHeight) {
+		// First decode with inJustDecodeBounds=true to check dimensions
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeFile(filepath, options);
+		
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+		
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeFile(filepath, options);
+	}
 }

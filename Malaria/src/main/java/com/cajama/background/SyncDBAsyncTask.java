@@ -1,5 +1,6 @@
-package com.cajama.malaria.encryption;
+package com.cajama.background;
 
+import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
 import com.cajama.malaria.R;
@@ -8,38 +9,60 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.ContentBody;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by Jasper on 8/8/13.
  */
-public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
-    String url = "http://10.40.93.115/api/key";
-    String TAG = "GetPublicKeyTask";
-    OnGetKeyResult onAsyncResult;
+public class SyncDBAsyncTask extends AsyncTask<String, Void, String> {
+    String url;
+    String TAG = "SyncDBAsyncTask";
+    OnAsyncResult onAsyncResult;
+    
+    public SyncDBAsyncTask(String url) {
+    	this.url = url;
+    }
 
-    public void setOnResultListener(OnGetKeyResult onAsyncResult) {
+    public void setOnResultListener(OnAsyncResult onAsyncResult) {
         if (onAsyncResult != null) this.onAsyncResult = onAsyncResult;
     }
 
     @Override
     protected String doInBackground(String... strings) {
-    	Log.d(TAG, String.valueOf(R.string.server_send_address));
-        HttpGet get = null;
+    	HttpPost post = null;
         HttpClient client = null;
-
+        MultipartEntity mp = null;
         try {
             client = new DefaultHttpClient();
-            get = new HttpGet(url);
+            post = new HttpPost(url);
 
-            HttpResponse getResponse = client.execute(get);
+            mp = new MultipartEntity();
+            ContentBody stringBody = new StringBody(strings[0]);
+            mp.addPart("message", stringBody);
+            post.setEntity(mp);
 
-            InputStream is = getResponse.getEntity().getContent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Log.d(TAG, String.valueOf(post.getRequestLine()));
+
+        try {
+        	HttpResponse response = client.execute(post);
+        	Log.d(TAG, "response: "+ response.getStatusLine());
+
+            InputStream is = response.getEntity().getContent();//getResponse.getEntity().getContent();
 
             BufferedReader br = null;
             StringBuilder sb = new StringBuilder();
@@ -49,7 +72,7 @@ public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
 
                 br = new BufferedReader(new InputStreamReader(is));
                 while ((line = br.readLine()) != null) {
-                    sb.append(line);
+                    sb.append(line+"\n");
                 }
 
             } catch (IOException e) {
@@ -64,7 +87,10 @@ public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
                 }
             }
 
-            onAsyncResult.onResult(1, sb.toString());
+            if (sb.toString().equals("ok")) {
+            	onAsyncResult.onResult(1, sb.toString());
+            }
+            else onAsyncResult.onResult(0, "fail");
 
             Log.d(TAG, sb.toString());
 
@@ -78,7 +104,7 @@ public class GetPublicKeyTask extends AsyncTask<String, Void, String> {
         return null;
     }
 
-    public interface OnGetKeyResult {
+    public interface OnAsyncResult {
         public abstract void onResult(int resultCode, String message);
     }
 }

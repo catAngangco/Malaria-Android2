@@ -23,28 +23,28 @@ public class AES {
     }
 
     public void encryptAES(File clearTextFile, File cipherTextFile){
-        //Log.v(TAG,"Start encryption");
+        Log.v(TAG,"Start encryption");
 
 
 
         try{
             Cipher cipher = Cipher.getInstance("AES");
-            //Log.v(TAG,"New cipher" + sk);
+            Log.v(TAG,"New cipher" + sk);
             cipher.init(Cipher.ENCRYPT_MODE,sk);
-            //Log.v(TAG,"Cipher created");
+            Log.v(TAG,"Cipher created");
 
             FileInputStream fis = new FileInputStream(clearTextFile);
             FileOutputStream fos = new FileOutputStream(cipherTextFile);
             CipherOutputStream cos = new CipherOutputStream(fos,cipher);
-            //Log.v(TAG,"Streams created");
+            Log.v(TAG,"Streams created");
             long startTime = System.currentTimeMillis();
             byte[] block = new byte[65536];
             while ((size = fis.read(block)) != -1) {
                 cos.write(block, 0, size);
-                //Log.v("AES","Size:"+String.valueOf(fis.available()));
+                Log.v("AES","Size:"+String.valueOf(fis.available()));
             }
             long difference = System.currentTimeMillis() - startTime;
-            //Log.v("AES","Time" + String.valueOf(difference/1000));
+            Log.v("AES","Time" + String.valueOf(difference/1000));
             cos.close();
 
         } catch (Exception e){ Log.v(TAG,"AES encryption error");}

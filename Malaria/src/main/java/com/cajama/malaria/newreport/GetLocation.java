@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.cajama.malaria.R;
 
 /**
  * Created by GMGA on 7/28/13.
@@ -30,8 +31,8 @@ public class GetLocation implements LocationListener {
     public void onLocationChanged(Location location) {
        // double lat = location.getLatitude();
        // double lng = location.getLongitude();
-        double lat = 14.6429007;
-        double lng = 121.0912867;
+        double lat = 14.6484329;
+        double lng = 121.0684466;
         latitude = String.valueOf(lat);
         longitude = String.valueOf(lng);
     }

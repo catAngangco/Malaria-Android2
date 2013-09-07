@@ -11,17 +11,16 @@ import com.cajama.malaria.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by GMGA on 8/7/13.
  */
 public class summaryAdapter extends BaseAdapter{
 
-    public ArrayList<Map<String,String>> list;
+    public ArrayList<HashMap> list;
     Activity activity;
 
-    public summaryAdapter(Activity activity, ArrayList<Map<String,String>> list) {
+    public summaryAdapter(Activity activity, ArrayList<HashMap> list) {
         super();
         this.activity = activity;
         this.list = list;
@@ -68,9 +67,9 @@ public class summaryAdapter extends BaseAdapter{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Map map = list.get(position);
+        HashMap map = list.get(position);
         holder.txtLabel.setText(map.get("label").toString());
-        holder.txtValue.setText(map.get("value").toString());
+        holder.txtValue.setText(map.get("").toString());
 
         return convertView;
     }
